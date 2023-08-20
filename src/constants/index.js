@@ -216,17 +216,17 @@ export const socialMedia = [
   {
     id: "social-media-2",
     icon: facebook,
-    link: "https://www.facebook.com/",
+    link: "https://www.facebook.com/kuasa.official",
   },
   {
     id: "social-media-3",
     icon: twitter,
-    link: "https://www.twitter.com/",
+    link: "https://twitter.com/kuasa_official",
   },
   {
     id: "social-media-4",
     icon: linkedin,
-    link: "https://www.linkedin.com/",
+    link: "https://www.linkedin.com/company/kenyatta-university-aerospace-students-association-kuasa/",
   },
 ];
 
