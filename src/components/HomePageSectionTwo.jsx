@@ -1,5 +1,5 @@
-import { randomimage1 } from "../assets";
-import styles, { layout } from "../style";
+import {randomimage1} from "../assets";
+import styles, {layout} from "../style";
 import Button from "./Button";
 
 const HomePageSectionTwo = () => (
@@ -18,8 +18,9 @@ const HomePageSectionTwo = () => (
         Lead your aerospace dreams with <br className="sm:block hidden" /> ease & confidence.
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        Explore the boundless boundaries of personal development and grow your leadership skills. Engage in projects
-        that sharpen your technical talents while simultaneously developing your social skills.
+        Explore the boundless boundaries of personal development and grow your leadership skills.
+        Engage in projects that sharpen your technical talents while simultaneously developing your
+        social skills.
       </p>
 
       <div className="flex flex-row flex-wrap sm:mt-10 mt-6">

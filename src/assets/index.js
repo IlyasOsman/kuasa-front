@@ -31,6 +31,9 @@ import ksa from "./ksa.png";
 import kairforce from "./kairforce.png";
 import kcaa from "./kcaa.png";
 import omarichet from "./omarichet.png";
+import location from "./location.svg";
+import call from "./call.svg";
+import mail from "./mail.svg";
 
 export {
   randomimage1,
@@ -66,4 +69,7 @@ export {
   kflyinglab,
   leo,
   omarichet,
+  location,
+  call,
+  mail
 };

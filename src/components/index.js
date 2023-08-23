@@ -21,5 +21,5 @@ export {
   Footer,
   Leadership,
   Hero,
-  Faqs,
+  Faqs
 };

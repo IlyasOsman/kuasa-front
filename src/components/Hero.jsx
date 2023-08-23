@@ -1,5 +1,5 @@
 import styles from "../style";
-import { discount, randomimage2 } from "../assets";
+import {discount, randomimage2} from "../assets";
 import GetStarted from "./GetStarted";
 
 const Hero = () => (
@@ -8,7 +8,8 @@ const Hero = () => (
       <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2">
         <img src={discount} alt="discount" className="w-[32px] h-[32px]" />
         <p className={`${styles.paragraph} ml-2`}>
-          <span className="text-white">20%</span> Waived For <span className="text-white"> New</span> Registration
+          <span className="text-white">20%</span> Waived For{" "}
+          <span className="text-white"> New</span> Registration
         </p>
       </div>
 
@@ -25,9 +26,9 @@ const Hero = () => (
         Engineering club.
       </h1>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        Our foundation is built on unwavering passion. We believe that when passion meets innovation, extraordinary
-        feats are achieved. KUASA empowers students to transform their dreams into tangible projects that push the
-        boundaries of aerospace engineering.
+        Our foundation is built on unwavering passion. We believe that when passion meets
+        innovation, extraordinary feats are achieved. KUASA empowers students to transform their
+        dreams into tangible projects that push the boundaries of aerospace engineering.
       </p>
     </div>
 

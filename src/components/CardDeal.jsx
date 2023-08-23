@@ -1,5 +1,5 @@
-import { geosync } from "../assets";
-import styles, { layout } from "../style";
+import {geosync} from "../assets";
+import styles, {layout} from "../style";
 import Button from "./Button";
 
 const CardDeal = () => (
@@ -9,8 +9,8 @@ const CardDeal = () => (
         Discover exceptional opportunities <br className="sm:block hidden" /> within KUASA
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        Explore the numerous opportunities available at KUASA, and start on a profound aerospace adventure with
-        simplicity and sophistication.
+        Explore the numerous opportunities available at KUASA, and start on a profound aerospace
+        adventure with simplicity and sophistication.
       </p>
 
       <Button styles={`mt-10`} text="Explore" />

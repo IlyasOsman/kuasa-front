@@ -1,22 +1,22 @@
 {
-    "name": "Kenyatta University Aerospace engineering Students Association",
-    "short_name": "KUASA",
-    "description": "This is Kenyatta University Aerospace engineering Students Association club website",
-    "start_url": "../index.html",
-    "icons": [
+  "name": "Kenyatta University Aerospace engineering Students Association",
+  "short_name": "KUASA",
+  "description": "This is Kenyatta University Aerospace engineering Students Association club website",
+  "start_url": "../index.html",
+  "icons": [
     {
-    "src": "/favicon.ico",
-    "sizes": "16x16"
+      "src": "/favicon.ico",
+      "sizes": "16x16"
     },
     {
-    "src": "/favicon-32x32.png",
-    "sizes": "32x32"
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32"
     },
     {
-    "src": "/favicon-192x192.png",
-    "sizes": "192x192"
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192"
     }
-],
-"background_color": "#ffffff",
-"theme_color": "#ffffff"
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
 }
