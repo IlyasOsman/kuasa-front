@@ -7,6 +7,7 @@ import {
   felix,
   elizabeth,
   mburu,
+  mwongera,
   facebook,
   instagram,
   linkedin,
@@ -55,48 +56,55 @@ export const leaders = [
   },
   {
     id: "2",
+    name: "Dr. Victor Mwongera",
+    title: "Patron",
+    url: "https://www.linkedin.com/in/dr-eng-victor-mwongera-pe-phd-mraes-meng-hons-0400562a/",
+    img: mwongera
+  },
+  {
+    id: "3",
     name: "Rachael Jelagat",
     title: "Deputy President",
     url: "https://www.linkedin.com/in/rachael-jelagat-82983b208",
     img: rachael
   },
   {
-    id: "3",
+    id: "4",
     name: "Brian Vuyiya",
     title: "Project Coordinator",
     url: "https://www.linkedin.com/in/brian-vuyiya-91b358243",
     img: brian
   },
   {
-    id: "4",
+    id: "5",
     name: "Mercy Kung’u",
     title: "Publicity Secretary",
     url: "https://www.linkedin.com/in/mercy-kung-u-252121235",
     img: mercy
   },
   {
-    id: "5",
+    id: "6",
     name: "Derric Munene",
     title: "Secretary General",
     url: "https://www.linkedin.com/in/derric-munene-6b2359226",
     img: munene
   },
   {
-    id: "6",
+    id: "7",
     name: "Felix Meitamei",
     title: "Organizing Secretary",
     url: "https://www.linkedin.com/in/felix-meitamei-99222a286",
     img: felix
   },
   {
-    id: "7",
+    id: "8",
     name: "Mburu Jessicah",
     title: "Finance secretary",
     url: "https://www.linkedin.com/in/mburu-jessicah-62036524a",
     img: mburu
   },
   {
-    id: "8",
+    id: "9",
     name: "Elizabeth Musau",
     title: "Assistant Publicity Secretary",
     url: "https://www.linkedin.com/in/elizabeth-musau-1b51a9215",
@@ -112,7 +120,7 @@ export const stats = [
   },
   {
     id: "stats-2",
-    title: "Patners",
+    title: "partners",
     value: "4+"
   },
   {
@@ -128,23 +136,23 @@ export const footerLinks = [
     links: [
       {
         name: "Contact us",
-        link: "https://www.kuasa.com/contact/"
+        link: "/contact"
       },
       {
         name: "About",
-        link: "https://www.kuasa.com/how-it-works/"
+        link: "/about"
       },
       {
         name: "Sign up",
-        link: "https://www.kuasa.com/create/"
+        link: "/signup"
       },
       {
         name: "Explore",
-        link: "https://www.kuasa.com/explore/"
+        link: "/blog"
       },
       {
-        name: "Terms & Services",
-        link: "https://www.kuasa.com/terms-and-services/"
+        name: "Terms & Conditions",
+        link: "/terms"
       }
     ]
   },
@@ -153,23 +161,23 @@ export const footerLinks = [
     links: [
       {
         name: "Help Center",
-        link: "https://www.kuasa.com/help-center/"
+        link: "/help-center"
       },
       {
         name: "Partners",
-        link: "https://www.kuasa.com/partners/"
+        link: "/partners"
       },
       {
         name: "Suggestions",
-        link: "https://www.kuasa.com/suggestions/"
+        link: "/contact"
       },
       {
         name: "Blog",
-        link: "https://www.kuasa.com/blog/"
+        link: "/blog"
       },
       {
         name: "Newsletters",
-        link: "https://www.kuasa.com/newsletters/"
+        link: "/newsletter"
       }
     ]
   },
@@ -178,11 +186,11 @@ export const footerLinks = [
     links: [
       {
         name: "Our Partners",
-        link: "https://www.kuasa.com/our-partner/"
+        link: "/partners"
       },
       {
         name: "Become a Partner",
-        link: "https://www.kuasa.com/become-a-partner/"
+        link: "/contact"
       }
     ]
   }
@@ -211,37 +219,37 @@ export const socialMedia = [
   }
 ];
 
-export const patners = [
+export const partners = [
   {
-    id: "patner-1",
+    id: "partner-1",
     logo: ebk
   },
   {
-    id: "patner-2",
+    id: "partner-2",
     logo: leo
   },
   {
-    id: "patner-3",
+    id: "partner-3",
     logo: kflyinglab
   },
   {
-    id: "patner-4",
+    id: "partner-4",
     logo: iek
   },
   {
-    id: "patner-5",
+    id: "partner-5",
     logo: omarichet
   },
   {
-    id: "patner-6",
+    id: "partner-6",
     logo: kcaa
   },
   {
-    id: "patner-7",
+    id: "partner-7",
     logo: ksa
   },
   {
-    id: "patner-8",
+    id: "partner-8",
     logo: kairforce
   }
 ];

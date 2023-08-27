@@ -34,6 +34,10 @@ import omarichet from "./omarichet.png";
 import location from "./location.svg";
 import call from "./call.svg";
 import mail from "./mail.svg";
+import eye from "./eye.png";
+import eyeOff from "./eyeoff.png";
+import nobgrocket from "./nobgrocket.png";
+import mwongera from "./mwongera.png"
 
 export {
   randomimage1,
@@ -71,5 +75,9 @@ export {
   omarichet,
   location,
   call,
-  mail
+  mail,
+  eye,
+  eyeOff,
+  nobgrocket,
+  mwongera
 };

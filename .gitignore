@@ -25,5 +25,9 @@ dist-ssr
 github-kuasa-front
 github-kuasa-front.pub
 
+# Ignore environment variables and sensitive information
+.env
+.env.local
+
 # vscode 
 .vscode

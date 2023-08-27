@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {faqsData} from "../constants";
 import styles from "../style";
+import { Link } from "react-router-dom";
 
 const Faqs = () => {
   const [openIndex, setOpenIndex] = useState(null); // Initialize with null
@@ -63,7 +64,9 @@ const Faqs = () => {
           className={` ${styles.flexCenter}  mt-6 font-semibold text-gray-500 dark:text-white flex-wrap`}
         >
           Have more questions, kindly &nbsp;{" "}
-          <span className="text-blue-300 underline">Contact us</span> &nbsp; here.
+          <Link to="/contact">
+            <span className="text-blue-300 underline">Contact us</span> &nbsp; here.
+          </Link>
         </p>
       </div>
     </section>

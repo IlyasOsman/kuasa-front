@@ -7,7 +7,9 @@ import Navbar from "./Navbar";
 const Layout = () => {
   return (
     <div className="flex flex-col min-h-screen bg-primary">
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+      <div
+        className={`${styles.paddingX} ${styles.flexCenter} border-b-[0.1px] border-b-[#3F3E45]`}
+      >
         <div className={`${styles.boxWidth}`}>
           <Navbar />
         </div>

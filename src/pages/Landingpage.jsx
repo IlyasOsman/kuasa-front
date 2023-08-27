@@ -3,7 +3,7 @@ import {
   HomePageSectionOne,
   HomePageSectionTwo,
   CardDeal,
-  Patners,
+  Partners,
   CTA,
   Stats,
   Leadership,
@@ -41,7 +41,7 @@ function Landingpage() {
           <HomePageSectionTwo />
           <CardDeal />
           <Leadership />
-          <Patners />
+          <Partners />
           <CTA />
           <Faqs />
         </div>

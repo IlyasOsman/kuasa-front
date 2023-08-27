@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import HomePageSectionTwo from "./HomePageSectionTwo";
 import CardDeal from "./CardDeal";
 import HomePageSectionOne from "./HomePageSectionOne";
-import Patners from "./Patners";
+import Partners from "./Partners";
 import CTA from "./CTA";
 import Stats from "./Stats";
 import Footer from "./Footer";
@@ -15,7 +15,7 @@ export {
   HomePageSectionTwo,
   CardDeal,
   HomePageSectionOne,
-  Patners,
+  Partners,
   CTA,
   Stats,
   Footer,

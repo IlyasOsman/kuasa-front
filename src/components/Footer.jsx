@@ -1,6 +1,7 @@
 import styles from "../style";
 import {logo} from "../assets";
 import {footerLinks, socialMedia} from "../constants";
+import {Link} from "react-router-dom";
 
 const currentYear = new Date().getFullYear();
 
@@ -29,7 +30,7 @@ const Footer = () => (
                     index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
                   }`}
                 >
-                  {link.name}
+                  <Link to={link.link}>{link.name}</Link>
                 </li>
               ))}
             </ul>

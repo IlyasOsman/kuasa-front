@@ -55,7 +55,7 @@ const Navbar = () => {
             {nav.title}
           </NavLink>
         ))}
-        <NavLink to="/signup" className="ml-7 cursor-pointer">
+        <NavLink to="/signin" className="ml-7 cursor-pointer">
           <Button text="Log in" />
         </NavLink>
       </ul>
@@ -90,7 +90,7 @@ const Navbar = () => {
               </NavLink>
             ))}
             <NavLink
-              to="/signup"
+              to="/signin"
               className="mt-5 cursor-pointer"
               onClick={() => {
                 setActive(true);
