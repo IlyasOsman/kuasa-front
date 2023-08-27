@@ -37,7 +37,7 @@ import mail from "./mail.svg";
 import eye from "./eye.png";
 import eyeOff from "./eyeoff.png";
 import nobgrocket from "./nobgrocket.png";
-import mwongera from "./mwongera.png"
+import mwongera from "./mwongera.png";
 
 export {
   randomimage1,

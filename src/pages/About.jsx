@@ -10,12 +10,14 @@ export const About = () => {
       <div className="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
         <div className="w-full lg:w-6/12">
           <h2 className="w-full font-bold lg:text-4xl text-3xl text-secondary lg:leading-10 leading-9">
-          Kenyatta University Aerospace Engineering Students Association Club
+            Kenyatta University Aerospace Engineering Students Association Club
           </h2>
           <p className="font-normal text-base leading-6 text-dimWhite mt-6">
-          Welcome to Kuasa Club, where passion takes flight and inspiration knows no bounds. 
-          As an aerospace-focused community, we are dedicated to nurturing the next generation of aerospace enthusiasts and professionals. 
-          Our club is a dynamic hub where students come together to cultivate skills, share knowledge, and embark on transformative projects that propel us toward the stars.
+            Welcome to Kuasa Club, where passion takes flight and inspiration knows no bounds. As an
+            aerospace-focused community, we are dedicated to nurturing the next generation of
+            aerospace enthusiasts and professionals. Our club is a dynamic hub where students come
+            together to cultivate skills, share knowledge, and embark on transformative projects
+            that propel us toward the stars.
           </p>
         </div>
         <div className="w-full lg:w-6/12">
@@ -159,7 +161,7 @@ export const About = () => {
             Projects
           </p>
           <p className="font-normal text-base leading-6 text-dimWhite mt-6">
-            10+ projects completed so far. Numerous other ongoing. 
+            10+ projects completed so far. Numerous other ongoing.
           </p>
         </div>
         <div className="sm:block hidden">
@@ -217,7 +219,7 @@ export const About = () => {
       <div className="sm:hidden grid sm:grid-cols-3 grid-cols-2 sm:gap-8 gap-4">
         <div>
           <p className="font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 text-secondary mt-6">
-          100+ members
+            100+ members
           </p>
           <p className="font-normal text-base leading-6 text-dimWhite mt-6">
             Club has more than 100 members that are actively working on projects and research.
@@ -231,15 +233,18 @@ export const About = () => {
             Our Mission
           </h2>
           <p className="font-normal text-base leading-6 text-dimWhite mt-6 w-full lg:w-10/12 xl:w-9/12">
-          At Kuasa Club, our mission is to kindle aerospace fascination, igniting a fire of knowledge, skill, and inspiration. 
-          We empower students with an inclusive platform for explorative journeys in aerospace through hands-on projects, workshops, and a supportive community. 
-          Our aim: equip members with expertise and problem-solving for the dynamic aerospace landscape, cultivating future experts who redefine flight and space limits.
+            At Kuasa Club, our mission is to kindle aerospace fascination, igniting a fire of
+            knowledge, skill, and inspiration. We empower students with an inclusive platform for
+            explorative journeys in aerospace through hands-on projects, workshops, and a supportive
+            community. Our aim: equip members with expertise and problem-solving for the dynamic
+            aerospace landscape, cultivating future experts who redefine flight and space limits.
           </p>
           <p className="font-normal text-base leading-6 text-dimWhite w-full lg:w-10/12 xl:w-9/12 mt-10">
-          We create not only students but also leaders shaping aerospace s future. Fostering teamwork, leadership, and community engagement, 
-          we empower members as change catalysts and sources of inspiration.
-          Join Kuasa Club; together, we reach for the stars, driven by shared aerospace passion, a thirst for knowledge, and commitment to a future where the sky is not the limit 
-          but a canvas for boundless aspirations.
+            We create not only students but also leaders shaping aerospace s future. Fostering
+            teamwork, leadership, and community engagement, we empower members as change catalysts
+            and sources of inspiration. Join Kuasa Club; together, we reach for the stars, driven by
+            shared aerospace passion, a thirst for knowledge, and commitment to a future where the
+            sky is not the limit but a canvas for boundless aspirations.
           </p>
         </div>
         <div className="w-full lg:w-6/12">
@@ -283,7 +288,8 @@ export const About = () => {
                   Team
                 </p>
                 <p className="mt-2 font-normal text-base leading-6 text-dimWhite">
-                Through teamwork, leadership, and community engagement, we empower members as catalysts for change and sources of inspiration.
+                  Through teamwork, leadership, and community engagement, we empower members as
+                  catalysts for change and sources of inspiration.
                 </p>
               </div>
             </div>
@@ -333,7 +339,8 @@ export const About = () => {
                   Board
                 </p>
                 <p className="mt-2 font-normal text-base leading-6 text-dimWhite">
-                Our team and board drive Kuasa Club s success. With diverse skills and united passion, we build a thriving aerospace community. 
+                  Our team and board drive Kuasa Club s success. With diverse skills and united
+                  passion, we build a thriving aerospace community.
                 </p>
               </div>
             </div>
@@ -369,7 +376,9 @@ export const About = () => {
                   Press
                 </p>
                 <p className="mt-2 font-normal text-base leading-6 text-dimWhite">
-                Through press initiatives, we spotlight our journey, sharing insights, accomplishments, and dreams, resonating our message of boundless aerospace possibilities.
+                  Through press initiatives, we spotlight our journey, sharing insights,
+                  accomplishments, and dreams, resonating our message of boundless aerospace
+                  possibilities.
                 </p>
               </div>
             </div>
