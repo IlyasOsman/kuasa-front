@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import {useAuth} from "../contexts/AuthContext";
+import {ToastContainer, toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const EditProfilePhoto = () => {
   const {accessToken, user, updateUser} = useAuth();
@@ -27,7 +29,7 @@ const EditProfilePhoto = () => {
       const formData = new FormData();
       formData.append("profile_image", selectedFile);
 
-      const response = await fetch("http://127.0.0.1:8000/api/profile/image/upload/", {
+      const response = await fetch("/profile/image/upload/", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`
@@ -44,6 +46,16 @@ const EditProfilePhoto = () => {
       } else {
         // Handle error, e.g., display an error message
         console.error("Error uploading photo");
+        toast.error("Upload coming soon!", {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "dark"
+        });
+
       }
     } catch (error) {
       console.error("Error uploading photo", error);
@@ -52,7 +64,7 @@ const EditProfilePhoto = () => {
 
   const handleRemoveClick = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/profile/image/remove/", {
+      const response = await fetch("api/profile/image/remove/", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`
@@ -120,6 +132,9 @@ const EditProfilePhoto = () => {
           Edit Photo
         </button>
       )}
+
+    <ToastContainer />
+
     </div>
   );
 };
