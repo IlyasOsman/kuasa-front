@@ -1,8 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../style";
 import Button from "./Button";
+import emailjs from "@emailjs/browser";
+import { Formik, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 export function Contact() {
+  const [message, setMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const serviceId = import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID
+  const templateId = import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID
+
+  useEffect(() => emailjs.init("oWwQKdbdixDBJZO19"), []);
+
+  const handleSubmit = (values, { resetForm }) => {
+    emailjs
+      .sendForm(
+        serviceId,
+        templateId,
+        values,
+        "oWwQKdbdixDBJZO19"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setMessage("Your message has been sent successfully!");
+          setTimeout(() => setMessage(""), 5000);
+          resetForm();
+          alert("Email successfully sent check inbox");
+        },
+        (error) => {
+          console.log(error.text);
+          setErrorMessage(
+            "Sorry, there was an error sending your message. \n Please try again later."
+          );
+          setTimeout(() => setErrorMessage(""), 5000);
+        }
+      );
+  };
+
+  const initialValues = {
+    name: "",
+    email: "",
+    message: "",
+  };
+
+  const validationSchema = Yup.object().shape({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    message: Yup.string().required("Message is required"),
+  });
+
+
   return (
     <section className={`${styles.flexCenter} ${styles.marginY} ${styles.marginX}`}>
       <div className={`${styles.boxWidth} flex flex-col`}>
@@ -58,7 +108,7 @@ export function Contact() {
                   />
                 </svg>
 
-                <span className="mx-2 text-white truncate w-72">(+254) 712-345-678</span>
+                <span className="mx-2 text-white truncate w-72">(+254) 797-344-147</span>
               </p>
 
               <p className="flex items-start -mx-2">
@@ -84,40 +134,69 @@ export function Contact() {
 
           <div className="mt-8 lg:w-1/2 lg:mx-6">
             <div className="w-full px-8 py-10 mx-auto overflow-hidden shadow-2xl rounded-xl bg-gray-900 lg:max-w-xl">
+              <div className="flex justify-content-center">
+                {message && (
+                  <p className="successs-message" style={{color: "green"}}>
+                    {message}
+                  </p>
+                )}
+                {errorMessage && (
+                  <p className="error-message" style={{color: "red"}}>
+                    {errorMessage}
+                  </p>
+                )}
+              </div>
+
               <h1 className="text-xl font-medium text-gray-200">Contact form</h1>
 
-              <form className="mt-4">
-                <div className="flex-1">
-                  <label className="block mb-2 text-sm text-gray-200">Full Name</label>
-                  <input
-                    type="text"
-                    placeholder="John Doe"
-                    className="block w-full px-5 py-3 mt-2 border rounded-md bg-gray-900 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
-                  />
-                </div>
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+              >
+                {() => (
+                  <div className="mt-4">
+                    <div className="flex-1">
+                      <label className="block mb-2 text-sm text-gray-200">Full Name</label>
+                      <Field
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        className="block w-full px-5 py-3 mt-2 border rounded-md bg-gray-900 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
+                      />
+                      <ErrorMessage name="name" component="div" className="text-red-500" />
+                    </div>
 
-                <div className="flex-1 mt-6">
-                  <label className="block mb-2 text-sm text-gray-200">Email address</label>
-                  <input
-                    type="email"
-                    placeholder="johndoe@example.com"
-                    required
-                    className="block w-full px-5 py-3 mt-2 border rounded-md bg-gray-900 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
-                  />
-                </div>
+                    <div className="flex-1 mt-6">
+                      <label className="block mb-2 text-sm text-gray-200">Email address</label>
+                      <Field
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        className="block w-full px-5 py-3 mt-2 border rounded-md bg-gray-900 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
+                      />
+                      <ErrorMessage name="email" component="div" className="text-red-500" />
+                    </div>
 
-                <div className="w-full mt-6">
-                  <label className="block mb-2 text-sm text-gray-200">Message</label>
-                  <textarea
-                    className="block w-full h-32 px-5 py-3 mt-2 placeholder-gray-400 border rounded-md md:h-48 bg-gray-900 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
-                    placeholder="Message"
-                  ></textarea>
-                </div>
-                <Button
-                  text="Submit"
-                  styles="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide"
-                />
-              </form>
+                    <div className="w-full mt-6">
+                      <label className="block mb-2 text-sm text-gray-200">Message</label>
+                      <Field
+                        as="textarea"
+                        name="message"
+                        placeholder="Message"
+                        className="block w-full h-32 px-5 py-3 mt-2 placeholder-gray-400 border rounded-md md:h-48 bg-gray-900 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
+                      />
+                      <ErrorMessage name="message" component="div" className="text-red-500" />
+                    </div>
+                    <Button
+                      type="submit"
+                      text="Submit"
+                      styles="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide"
+                    />
+                  </div>
+                )}
+              </Formik>
+
             </div>
           </div>
         </div>

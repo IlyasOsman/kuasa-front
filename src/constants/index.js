@@ -9,7 +9,7 @@ import {
   mburu,
   mwongera,
   facebook,
-  instagram,
+  github,
   linkedin,
   twitter,
   network,
@@ -143,8 +143,8 @@ export const footerLinks = [
         link: "/about"
       },
       {
-        name: "Sign up",
-        link: "/signup"
+        name: "Github",
+        link: "https://github.com/kuasakenya"
       },
       {
         name: "Explore",
@@ -199,8 +199,8 @@ export const footerLinks = [
 export const socialMedia = [
   {
     id: "social-media-1",
-    icon: instagram,
-    link: "https://www.instagram.com/"
+    icon: github,
+    link: "https://github.com/kuasakenya"
   },
   {
     id: "social-media-2",

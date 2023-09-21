@@ -9,6 +9,8 @@ import Footer from "./Footer";
 import Leadership from "./Leadership";
 import Hero from "./Hero";
 import Faqs from "./Faqs";
+import Profile from "./Profile";
+import MemberTable from "./MemberTable";
 
 export {
   Navbar,
@@ -21,5 +23,7 @@ export {
   Footer,
   Leadership,
   Hero,
-  Faqs
+  Faqs,
+  Profile,
+  MemberTable
 };

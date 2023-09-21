@@ -1,12 +1,14 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {createContext, useContext, useState, useEffect} from "react";
 import PropTypes from "prop-types";
-import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import {useNavigate} from "react-router-dom";
+import {ToastContainer, toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
+const kuasaApi = import.meta.env.VITE_REACT_APP_KUASA_API;
+
+export function AuthProvider({children}) {
   const [user, setUser] = useState(null);
   const [accessToken, setAccessToken] = useState(null);
   const navigate = useNavigate();
@@ -22,7 +24,7 @@ export function AuthProvider({ children }) {
 
   const login = async (credentials) => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/login/", {
+      const response = await fetch(`${kuasaApi}/api/login/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -35,21 +37,20 @@ export function AuthProvider({ children }) {
         const accessToken = tokenData.access;
         localStorage.setItem("jwtToken", accessToken);
         setAccessToken(accessToken);
-        navigate("/landingpage");
+        navigate("/home");
         await fetchUserProfile(accessToken);
       } else {
         // const errorData = await response.json();
         toast.error("Invalid username or password", {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-          }
-          );
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark"
+        });
       }
     } catch (error) {
       console.error("Login error:", error);
@@ -61,9 +62,8 @@ export function AuthProvider({ children }) {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "dark",
-      }
-      );
+        theme: "dark"
+      });
     }
   };
 
@@ -71,12 +71,12 @@ export function AuthProvider({ children }) {
     localStorage.removeItem("jwtToken");
     setAccessToken(null);
     setUser(null);
-    navigate("/landingpage");
+    navigate("/home");
   };
 
   const fetchUserProfile = async (accessToken) => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/profile/", {
+      const response = await fetch(`${kuasaApi}/api/profile/`, {
         headers: {
           Authorization: `Bearer ${accessToken}`
         }
@@ -98,7 +98,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, accessToken, updateUser }}>
+    <AuthContext.Provider value={{user, login, logout, accessToken, updateUser}}>
       {children}
       <ToastContainer />
     </AuthContext.Provider>

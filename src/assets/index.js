@@ -11,7 +11,6 @@ import close from "./close.svg";
 import arrowUp from "./arrow-up.svg";
 import discount from "./Discount.svg";
 import facebook from "./facebook.svg";
-import instagram from "./instagram.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
 import hero from "./hero.mp4";
@@ -38,6 +37,9 @@ import eye from "./eye.png";
 import eyeOff from "./eyeoff.png";
 import nobgrocket from "./nobgrocket.png";
 import mwongera from "./mwongera.png";
+import placeholderprofileimage from "./placeholderprofileimage.png";
+import whatsapp from "./whatsapp.svg";
+import github from "./github.svg";
 
 export {
   randomimage1,
@@ -53,7 +55,6 @@ export {
   arrowUp,
   discount,
   facebook,
-  instagram,
   linkedin,
   twitter,
   hero,
@@ -79,5 +80,8 @@ export {
   eye,
   eyeOff,
   nobgrocket,
-  mwongera
+  mwongera,
+  placeholderprofileimage,
+  whatsapp,
+  github
 };

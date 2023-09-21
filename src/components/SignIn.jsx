@@ -3,10 +3,13 @@ import {eye, eyeOff, logo} from "../assets";
 import styles from "../style";
 import Button from "./Button";
 import {Link} from "react-router-dom";
+import {useFormik} from "formik";
+import {useAuth} from "../contexts/AuthContext";
 
 export function SignIn() {
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);
+  const {login} = useAuth(); // Use the login function from AuthContext
 
   const handleToggle = () => {
     if (type === "password") {
@@ -18,16 +21,43 @@ export function SignIn() {
     }
   };
 
+  const formik = useFormik({
+    initialValues: {
+      username: "",
+      password: ""
+    },
+    validate: (values) => {
+      const errors = {};
+      if (!values.username) {
+        errors.username = "Username is required";
+      }
+      if (!values.password) {
+        errors.password = "Password is required";
+      }
+      return errors;
+    },
+    onSubmit: async (values) => {
+      try {
+        // Call the login function from AuthContext instead of directly fetching the login API
+        await login(values);
+
+        // Redirect to the homepage (assuming successful login)
+        // You can handle redirection within the login function in AuthContext
+      } catch (error) {
+        // Handle login errors
+        console.error("Error:", error);
+      }
+    }
+  });
+
   return (
     <section className={`bg-primary ${styles.flexCenter} ${styles.marginX} ${styles.marginY}`}>
       <div
         className={`w-full px-8 py-10 mx-auto overflow-hidden shadow-2xl rounded-xl bg-gray-900 lg:max-w-xl `}
       >
-        <form className="mt-4">
+        <form className="mt-4" onSubmit={formik.handleSubmit}>
           <img className="w-auto h-7 sm:h-8" src={logo} alt="kuasa" />
-
           <h1 className="mt-3 text-2xl font-semibold capitalize sm:text-3xl text-white">Sign In</h1>
-
           <div className="relative flex items-center mt-8">
             <span className="absolute">
               <svg
@@ -47,11 +77,19 @@ export function SignIn() {
             </span>
 
             <input
-              type="email"
+              type="username"
+              name="username"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.username}
               className="block w-full py-3 px-10 focus:ring-opacity-40 border rounded-md bg-gray-900 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
-              placeholder="Email address"
+              placeholder="Username i.e. K-12345"
             />
           </div>
+
+          {formik.touched.username && formik.errors.username ? (
+            <small className="text-red-500 mt-2">{formik.errors.username}</small>
+          ) : null}
 
           <div className="relative flex items-center mt-4">
             <span className="absolute">
@@ -72,23 +110,35 @@ export function SignIn() {
             </span>
             <input
               type={type}
+              name="password"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
               className="block w-full py-3 px-10 focus:ring-opacity-40 border rounded-md bg-gray-900 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
               placeholder="Password"
             />
+
             <span onClick={handleToggle} className="absolute right-3 cursor-pointer">
               <img src={icon} sizes={25} alt="show" />
             </span>
           </div>
-
-          <a
-            href="#"
-            className="inline-block mt-4 text-blue-500 capitalize hover:underline dark:text-blue-400"
-          >
-            Forgot Password?
-          </a>
-
+          <div className="flex flex-col">
+            {formik.touched.password && formik.errors.password ? (
+              <small className="text-red-500 mt-2">{formik.errors.password}</small>
+            ) : null}
+            <a
+              href="#"
+              className="inline-block mt-4 text-blue-500 capitalize hover:underline dark:text-blue-400"
+            >
+              Forgot Password?
+            </a>
+          </div>
           <div className="mt-6">
-            <Button text="Sign in" styles="w-full px-6 py-3 text-sm  tracking-wide rounded-md" />
+            <Button
+              text="Sign in"
+              type="submit"
+              styles="w-full px-6 py-3 text-sm  tracking-wide rounded-md"
+            />
             <p className="mt-4 text-center text-gray-400">or sign in with</p>
 
             <a

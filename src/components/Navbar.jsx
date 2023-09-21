@@ -1,12 +1,13 @@
 import React, {useState} from "react";
-
 import {close, logo, menu} from "../assets";
 import {Link, NavLink} from "react-router-dom";
 import Button from "./Button";
+import {useAuth} from "../contexts/AuthContext"; // Import useAuth from your AuthContext
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
+  const {user, logout} = useAuth(); // Use useAuth to access user
 
   const handleLinkClick = () => {
     // Close the toggle when a link is clicked
@@ -15,10 +16,15 @@ const Navbar = () => {
     }
   };
 
+  const handleLogout = () => {
+    logout(); // Call the logout function from AuthContext
+    setActive("Home"); // Reset the active tab
+  };
+
   const navLinks = [
     {
       title: "Home",
-      path: "/landingpage"
+      path: "/home"
     },
     {
       title: "Projects",
@@ -36,7 +42,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <Link to="/landingpage">
+      <Link to="/home">
         <img src={logo} alt="kuasa" className="w-[124px] h-[32px]" />
       </Link>
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
@@ -55,9 +61,36 @@ const Navbar = () => {
             {nav.title}
           </NavLink>
         ))}
-        <NavLink to="/signin" className="ml-7 cursor-pointer">
-          <Button text="Log in" />
-        </NavLink>
+        {user ? (
+          // If user is logged in, show username and dropdown menu
+          <div className="relative ml-7 cursor-pointer">
+            <span className="text-secondary cursor-pointer" onClick={() => setToggle(!toggle)}>
+              {user.username} ▼ {/* Unicode triangle for dropdown arrow */}
+            </span>
+            {toggle && (
+              <div className="absolute right-0 mt-4 py-2 bg-primary text-white rounded shadow-md z-[10000]">
+                <Link
+                  to="/profile" // Link to user profile page
+                  className="block px-6 py-2 hover:bg-gray-900 hover:text-secondary"
+                  onClick={handleLinkClick}
+                >
+                  Profile
+                </Link>
+                <button
+                  onClick={handleLogout} // Use the handleLogout function
+                  className="block w-full text-left px-6 py-2 hover:bg-gray-900 hover:text-secondary"
+                >
+                  Log&nbsp;Out
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
+          // If user is not logged in, show "Log in" button
+          <NavLink to="/signin" className="ml-7 cursor-pointer">
+            <Button text="Log in" />
+          </NavLink>
+        )}
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center z-[100]">
@@ -89,16 +122,42 @@ const Navbar = () => {
                 {nav.title}
               </NavLink>
             ))}
-            <NavLink
-              to="/signin"
-              className="mt-5 cursor-pointer"
-              onClick={() => {
-                setActive(true);
-                handleLinkClick(); // Call the handleLinkClick function
-              }}
-            >
-              <Button text="Log in" />
-            </NavLink>
+            {user ? (
+              // If user is logged in, show username and dropdown menu
+              <div className="mt-5">
+                <span className="text-secondary cursor-pointer" onClick={() => setToggle(!toggle)}>
+                  {user.username} ▼ {/* Unicode triangle for dropdown arrow */}
+                </span>
+                {toggle && (
+                  <div className="mt-2 py-2  bg-primary text-white rounded shadow-md">
+                    <Link
+                      to="/profile" // Link to user profile page
+                      className="block px-4 py-2  hover:bg-gray-900 hover:text-secondary"
+                      onClick={handleLinkClick}
+                    >
+                      Profile
+                    </Link>
+                    <button
+                      onClick={handleLogout} // Use the handleLogout function
+                      className="block w-full text-left px-4 py-2  hover:bg-gray-900 hover:text-secondary"
+                    >
+                      Log out
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              // If user is not logged in, show "Log in" button
+              <NavLink
+                to="/signin"
+                onClick={() => {
+                  setActive(true);
+                  handleLinkClick(); // Call the handleLinkClick function
+                }}
+              >
+                <Button text="Log in" />
+              </NavLink>
+            )}
           </ul>
         </div>
       </div>

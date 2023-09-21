@@ -3,6 +3,7 @@ import PhotoCard from "../components/PhotoCard";
 import styles from "../style";
 import {ComingSoon} from "./ComingSoon";
 import NotFoundpage from "./NotFoundpage"; // Import the NotFoundpage component
+import Loader from "../components/Loader";
 
 const apiKey = import.meta.env.VITE_REACT_APP_NASA_API_KEY;
 
@@ -10,6 +11,7 @@ export const Blog = () => {
   const [blogData, setBlogData] = useState([]);
   const [activeTab, setActiveTab] = useState("photo"); // Initialize with "photo"
   const [apiError, setApiError] = useState(false); // Track API error state
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Fetch data from NASA API
@@ -23,10 +25,12 @@ export const Blog = () => {
       .then((data) => {
         setBlogData(data);
         setApiError(false); // Reset API error state
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
         setApiError(true); // Set API error state
+        setIsLoading(false);
       });
   }, []);
 
@@ -60,8 +64,9 @@ export const Blog = () => {
             Blog
           </button>
         </div>
-
-        {activeTab == "photo" ? (
+        {isLoading ? ( // Display loader while isLoading is true
+          <Loader />
+        ) : activeTab === "photo" ? (
           // Display NotFoundpage component if there's an API error
           apiError ? (
             <NotFoundpage />

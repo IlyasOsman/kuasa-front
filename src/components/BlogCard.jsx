@@ -1,6 +1,6 @@
 import React from "react";
 
-export const BlogCard = () => {
+const BlogCard = () => {
   return (
     <section className="flex rounded-md transition hover:shadow-xl bg-gray-900 shadow-gray-800/25">
       <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
@@ -50,3 +50,5 @@ export const BlogCard = () => {
     </section>
   );
 };
+
+export default BlogCard;

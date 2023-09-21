@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import {features} from "../constants";
 import styles, {layout} from "../style";
-import Button from "./Button";
 
 const FeatureCard = ({icon, title, content, index}) => (
   <div
@@ -29,27 +28,27 @@ FeatureCard.propTypes = {
   index: PropTypes.number.isRequired
 };
 
-const HomePageSectionOne = () => (
-  <section id="features" className={layout.section}>
-    <div className={layout.sectionInfo}>
-      <h2 className={styles.heading2}>
-        Focus on passion, <br className="sm:block hidden" /> KUASA handle the rest.
-      </h2>
-      <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        With KUASA at your side, you can elevate your aerospace journey by immersing yourself in a
-        world of hands-on projects, cultivating invaluable skills, and building a network of
-        like-minded individuals.
-      </p>
+const HomePageSectionOne = () => {
+  return (
+    <section id="features" className={layout.section}>
+      <div className={layout.sectionInfo}>
+        <h2 className={styles.heading2}>
+          Focus on passion, <br className="sm:block hidden" /> KUASA handle the rest.
+        </h2>
+        <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
+          With KUASA at your side, you can elevate your aerospace journey by immersing yourself in a
+          world of hands-on projects, cultivating invaluable skills, and building a network of
+          like-minded individuals.
+        </p>
+      </div>
 
-      <Button styles={`mt-10`} />
-    </div>
-
-    <div className={`${layout.sectionImg} flex-col`}>
-      {features.map((feature, index) => (
-        <FeatureCard key={feature.id} {...feature} index={index} />
-      ))}
-    </div>
-  </section>
-);
+      <div className={`${layout.sectionImg} flex-col`}>
+        {features.map((feature, index) => (
+          <FeatureCard key={feature.id} {...feature} index={index} />
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default HomePageSectionOne;
