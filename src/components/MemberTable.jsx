@@ -16,7 +16,6 @@ const MemberTable = () => {
   const paginatedData = data.slice(startIndex, endIndex);
   const kuasaApi = import.meta.env.VITE_REACT_APP_KUASA_API;
 
-
   // Function to handle page navigation
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);

@@ -1,57 +1,49 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import styles from "../style";
 import Button from "./Button";
 import emailjs from "@emailjs/browser";
-import { Formik, Field, ErrorMessage } from "formik";
+import {Formik, Field, ErrorMessage} from "formik";
 import * as Yup from "yup";
 
 export function Contact() {
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const serviceId = import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID
-  const templateId = import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID
+  const serviceId = import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID;
+  const templateId = import.meta.env.VITE_REACT_APP_EMAILJS_TEMPLATE_ID;
 
   useEffect(() => emailjs.init("oWwQKdbdixDBJZO19"), []);
 
-  const handleSubmit = (values, { resetForm }) => {
-    emailjs
-      .sendForm(
-        serviceId,
-        templateId,
-        values,
-        "oWwQKdbdixDBJZO19"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setMessage("Your message has been sent successfully!");
-          setTimeout(() => setMessage(""), 5000);
-          resetForm();
-          alert("Email successfully sent check inbox");
-        },
-        (error) => {
-          console.log(error.text);
-          setErrorMessage(
-            "Sorry, there was an error sending your message. \n Please try again later."
-          );
-          setTimeout(() => setErrorMessage(""), 5000);
-        }
-      );
+  const handleSubmit = (values, {resetForm}) => {
+    emailjs.sendForm(serviceId, templateId, values, "oWwQKdbdixDBJZO19").then(
+      (result) => {
+        console.log(result.text);
+        setMessage("Your message has been sent successfully!");
+        setTimeout(() => setMessage(""), 5000);
+        resetForm();
+        alert("Email successfully sent check inbox");
+      },
+      (error) => {
+        console.log(error.text);
+        setErrorMessage(
+          "Sorry, there was an error sending your message. \n Please try again later."
+        );
+        setTimeout(() => setErrorMessage(""), 5000);
+      }
+    );
   };
 
   const initialValues = {
     name: "",
     email: "",
-    message: "",
+    message: ""
   };
 
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
     email: Yup.string().email("Invalid email").required("Email is required"),
-    message: Yup.string().required("Message is required"),
+    message: Yup.string().required("Message is required")
   });
-
 
   return (
     <section className={`${styles.flexCenter} ${styles.marginY} ${styles.marginX}`}>
@@ -196,7 +188,6 @@ export function Contact() {
                   </div>
                 )}
               </Formik>
-
             </div>
           </div>
         </div>

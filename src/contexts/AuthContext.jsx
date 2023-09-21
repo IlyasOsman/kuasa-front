@@ -17,7 +17,7 @@ export function AuthProvider({children}) {
     const storedToken = localStorage.getItem("jwtToken");
 
     if (storedToken) {
-      setAccessToken(storedToken); // Set access token from local storage
+      setAccessToken(storedToken);
       fetchUserProfile(storedToken);
     }
   }, []);

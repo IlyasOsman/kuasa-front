@@ -9,7 +9,6 @@ import Loader from "./Loader";
 
 const kuasaApi = import.meta.env.VITE_REACT_APP_KUASA_API;
 
-
 const MemberProfile = () => {
   const {accessToken} = useAuth();
   const {pk} = useParams();
@@ -67,34 +66,34 @@ const MemberProfile = () => {
                 <h1 className="text-secondary font-bold text-xl leading-8 my-1">{`${member.first_name} ${member.last_name}`}</h1>
                 <p className="text-sm text-secondary hover:text-dimWhite leading-6">{member.bio}</p>
                 <ul className="bg-black-gradient-2 text-white py-2 px-3 mt-3 rounded shadow-sm divide-y">
-                {member.leadership_role && (
-                  <li className="flex items-center py-3">
-                    <span className="text-secondary font-bold">{member.leadership_role}</span>
-                  </li>
-                )}
+                  {member.leadership_role && (
+                    <li className="flex items-center py-3">
+                      <span className="text-secondary font-bold">{member.leadership_role}</span>
+                    </li>
+                  )}
 
-                {member.is_corporate_member && (
+                  {member.is_corporate_member && (
+                    <li className="flex items-center py-3">
+                      <span className="text-secondary font-bold">
+                        {member.is_corporate_member ? "Corporate Member" : null}
+                      </span>
+                    </li>
+                  )}
+
                   <li className="flex items-center py-3">
-                    <span className="text-secondary font-bold">
-                      {member.is_corporate_member ? "Corporate Member" : null}
+                    <span>Member</span>
+                    <span className="ml-auto">
+                      <span
+                        className={`bg-${
+                          member.is_member ? "green" : "red"
+                        }-500 py-1 px-2 text-white rounded text-sm`}
+                      >
+                        {member.is_member ? "YES" : "NO"}
+                      </span>
                     </span>
                   </li>
-                )}
-
-                <li className="flex items-center py-3">
-                  <span>Member</span>
-                  <span className="ml-auto">
-                    <span
-                      className={`bg-${
-                        member.is_member ? "green" : "red"
-                      }-500 py-1 px-2 text-white rounded text-sm`}
-                    >
-                      {member.is_member ? "YES" : "NO"}
-                    </span>
-                  </span>
-                </li>
-                {/* Add other profile data here */}
-              </ul>
+                  {/* Add other profile data here */}
+                </ul>
               </div>
             )}
           </div>
