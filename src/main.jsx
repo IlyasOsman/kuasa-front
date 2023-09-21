@@ -4,9 +4,9 @@ import App from "./App";
 import "./index.css";
 import {AuthProvider} from "./contexts/AuthContext";
 
-// import {inject} from "@vercel/analytics";
+import {inject} from "@vercel/analytics";
 
-// inject();
+inject();
 
 import {BrowserRouter as Router} from "react-router-dom";
 
