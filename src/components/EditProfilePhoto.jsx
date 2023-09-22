@@ -55,7 +55,6 @@ const EditProfilePhoto = () => {
           draggable: true,
           theme: "dark"
         });
-
       }
     } catch (error) {
       console.error("Error uploading photo", error);
@@ -133,8 +132,7 @@ const EditProfilePhoto = () => {
         </button>
       )}
 
-    <ToastContainer />
-
+      <ToastContainer />
     </div>
   );
 };

@@ -40,6 +40,7 @@ import mwongera from "./mwongera.png";
 import placeholderprofileimage from "./placeholderprofileimage.png";
 import whatsapp from "./whatsapp.svg";
 import github from "./github.svg";
+import demoimage from "./demoimage.png";
 
 export {
   randomimage1,
@@ -83,5 +84,6 @@ export {
   mwongera,
   placeholderprofileimage,
   whatsapp,
-  github
+  github,
+  demoimage
 };

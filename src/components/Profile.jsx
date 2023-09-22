@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {placeholderprofileimage} from "../assets";
-import BlogCard from "./BlogCard";
 import styles from "../style";
 import MemberTable from "./MemberTable";
 import {useAuth} from "../contexts/AuthContext";
@@ -9,6 +8,7 @@ import ChangePasswordForm from "./ChangePasswordForm";
 import EditProfilePhoto from "./EditProfilePhoto";
 import {linkedin} from "../assets";
 import Loader from "./Loader";
+import NoPostYet from "./NoPostYet";
 
 const Profile = () => {
   const {user} = useAuth();
@@ -231,7 +231,7 @@ const Profile = () => {
               </div>
               <div className="mt-2 space-y-4 flex-grow">
                 {/* Sample Blog/Project */}
-                <BlogCard />
+                <NoPostYet />
                 {/* Add more Blog/Project components here */}
               </div>
             </div>

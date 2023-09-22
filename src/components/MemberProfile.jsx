@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
 import {placeholderprofileimage, linkedin} from "../assets";
-import BlogCard from "./BlogCard";
 import styles from "../style";
 import MemberTable from "./MemberTable";
 import {useAuth} from "../contexts/AuthContext";
 import {useParams} from "react-router-dom";
 import Loader from "./Loader";
+import NoPostYet from "./NoPostYet";
 
 const kuasaApi = import.meta.env.VITE_REACT_APP_KUASA_API;
 
@@ -209,7 +209,7 @@ const MemberProfile = () => {
                 </div>
                 <div className="mt-2 space-y-4 flex-grow">
                   {/* Sample Blog/Project */}
-                  <BlogCard />
+                  <NoPostYet />
                   {/* Add more Blog/Project components here */}
                 </div>
               </div>
