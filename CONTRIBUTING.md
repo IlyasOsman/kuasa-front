@@ -11,7 +11,7 @@ To contribute effectively to the KUASA website project, you should meet the foll
 - **Frontend Technologies**:
 
   - HTML, CSS: Proficiency in HTML and CSS for web development.
-  - JavaScript: Strong knowledge of JavaScript for frontend interactivity.
+  - JavaScript: Knowledge of JavaScript for frontend interactivity.
   - Tailwind CSS: Familiarity with the Tailwind CSS framework for styling.
 
 - **ReactJS**: Experience with ReactJS, as the project is built using React with Vite.
@@ -31,7 +31,21 @@ To contribute effectively to the KUASA website project, you should meet the foll
      git clone https://github.com/your-username/kuasa-front.git
      ```
 
-3. **Install Dependencies**:
+3. **Create and Configure .env File**:
+
+   - Create a `.env` file in the project root directory:
+
+     ```
+     touch .env
+     ```
+
+   - Edit the `.env` file and add the following line with the appropriate API URL:
+
+     ```
+     VITE_REACT_APP_KUASA_API=https://127.0.0.1:8000
+     ```
+
+4. **Install Dependencies**:
 
    - Navigate to the project directory and install the required dependencies:
      ```
@@ -39,7 +53,7 @@ To contribute effectively to the KUASA website project, you should meet the foll
      npm install
      ```
 
-4. **Run the Project**:
+5. **Run the Project**:
 
    - Start the development server to run the project:
      ```
@@ -47,18 +61,18 @@ To contribute effectively to the KUASA website project, you should meet the foll
      ```
      The website should now be accessible in your web browser.
 
-5. **Create a Branch**:
+6. **Create a Branch**:
 
    - Create a new branch for your contribution:
      ```
      git checkout -b feature/your-feature-name
      ```
 
-6. **Make Changes**:
+7. **Make Changes**:
 
    - Make your desired changes or additions to the codebase.
 
-7. **Linting and Formatting**:
+8. **Linting and Formatting**:
 
    - Before committing your changes, make sure to fix linting errors and format the code:
      ```
@@ -66,31 +80,31 @@ To contribute effectively to the KUASA website project, you should meet the foll
      npx prettier --write .
      ```
 
-8. **Commit Your Changes**:
+9. **Commit Your Changes**:
 
    - Commit your changes with a clear and descriptive commit message:
      ```
      git commit -m "Add feature: your feature description"
      ```
 
-9. **Push to Your Fork**:
+10. **Push to Your Fork**:
 
    - Push your changes to your GitHub fork:
      ```
      git push origin feature/your-feature-name
      ```
 
-10. **Open a Pull Request**:
+11. **Open a Pull Request**:
 
     - Go to the [KUASA GitHub repository](https://github.com/kuasakenya/kuasa-front) and click the "New Pull Request" button.
     - Select the base branch (usually "main" or "master") and your feature branch.
     - Write a detailed description of your changes in the pull request.
 
-11. **Review and Collaborate**:
+12. **Review and Collaborate**:
 
     - Participate in the discussion and address any feedback or questions related to your pull request.
 
-12. **Merge**:
+13. **Merge**:
     - Once your pull request is approved, it will be merged into the main project.
 
 ## Setting up the Backend (Optional)
@@ -129,7 +143,7 @@ If you wish to contribute to the backend as well, you can set up the Django Rest
      python3 manage.py runserver
      ```
 
-For more check out this [contributing](https://github.com/kuasakenya/kuasa-dj/CONTRIBUTING.md) guidelines. Keep in mind that frontend and backend contributions can be done independently.
+For more check out this [contributing](https://github.com/kuasakenya/kuasa-dj/blob/main/CONTRIBUTING.md) guidelines. Keep in mind that frontend and backend contributions can be done independently.
 
 ## Code of Conduct
 

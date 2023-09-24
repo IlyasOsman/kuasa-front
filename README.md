@@ -1,6 +1,9 @@
-# KUASA
+<h2 align="center">
+KUASA
+</h2>
 
 Welcome to the Kenyatta University Aerospace Engineering Students Association (KUASA) website! This project serves as the online platform for KUASA, providing information, updates, and resources for our members and community.
+</br>
 
 ![KUASA Homepage](/src/assets/homepage.png)
 
