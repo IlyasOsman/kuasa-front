@@ -44,7 +44,7 @@ To get started with the KUASA website, follow these steps:
 
 1. **Access the Website**:
 
-   - Visit the live KUASA Website at [https://www.kuasa.live](https://www.kuasa.live).
+   - Visit the live KUASA Website at [https://kuasa.live](https://kuasa.live).
 
 2. **Explore**:
 
