@@ -89,10 +89,10 @@ To contribute effectively to the KUASA website project, you should meet the foll
 
 10. **Push to Your Fork**:
 
-   - Push your changes to your GitHub fork:
-     ```
-     git push origin feature/your-feature-name
-     ```
+- Push your changes to your GitHub fork:
+  ```
+  git push origin feature/your-feature-name
+  ```
 
 11. **Open a Pull Request**:
 
