@@ -33,12 +33,23 @@ export function AuthProvider({children}) {
       });
 
       if (response.ok) {
-        const tokenData = await response.json();
-        const accessToken = tokenData.access;
-        localStorage.setItem("jwtToken", accessToken);
-        setAccessToken(accessToken);
-        navigate("/home");
-        await fetchUserProfile(accessToken);
+        const responseData = await response.json();
+        const { message, access } = responseData;
+
+        if (message === "A verification email has been sent.") {
+          // Redirect to /email-verification for non-verified users
+          navigate("/email-verification");
+        } else {
+          // User is verified, set the access token and fetch user profile
+          const accessToken = access;
+          localStorage.setItem("jwtToken", accessToken);
+          setAccessToken(accessToken);
+          await fetchUserProfile(accessToken);
+
+          // Redirect to /home for verified users
+          navigate("/home");
+        }
+
       } else {
         // const errorData = await response.json();
         toast.error("Invalid username or password", {

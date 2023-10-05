@@ -51,8 +51,7 @@ export function SignUp() {
 
         if (response.ok) {
           // Handle success, e.g., redirect to login page or show a success message.
-          console.log("Registration successful");
-          // Redirect to the '/signin' page upon successful registration
+          // Redirect to the '/email-verification' page upon successful registration
           toast.success("Registration successful", {
             position: "top-center",
             autoClose: 3000,
@@ -64,7 +63,7 @@ export function SignUp() {
           });
 
           setTimeout(() => {
-            navigate("/signin");
+            navigate("/email-verification");
           }, 4000);
         } else {
           // Handle errors

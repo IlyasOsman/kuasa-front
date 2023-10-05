@@ -149,6 +149,7 @@ const Navbar = () => {
             ) : (
               // If user is not logged in, show "Log in" button
               <NavLink
+                className="mt-4"
                 to="/signin"
                 onClick={() => {
                   setActive(true);

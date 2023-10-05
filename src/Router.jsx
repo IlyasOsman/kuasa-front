@@ -13,6 +13,8 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import {About} from "./pages/About";
 import {Profile} from "./components";
 import MemberProfile from "./components/MemberProfile";
+import EmailVerification from "./components/EmailVerification";
+// import SuccessfullyVerified from "./components/SuccessfullyVerified";
 
 const Routers = () => {
   return (
@@ -30,6 +32,8 @@ const Routers = () => {
       <Route path="about" element={<About />} />
       <Route path="profile" element={<Profile />} />
       <Route path="/members/:pk" element={<MemberProfile />} />
+      <Route path="/email-verification" element={<EmailVerification />} />
+      {/* <Route path="/verify-email" element={<SuccessfullyVerified />} /> */}
     </Routes>
   );
 };
