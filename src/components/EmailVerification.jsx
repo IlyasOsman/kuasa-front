@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styles from '../style';
+import React, {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
+import styles from "../style";
 
 function EmailVerification() {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ function EmailVerification() {
 
     // Set a timer to redirect to the sign-in page after 10 seconds
     const redirectTimer = setTimeout(() => {
-      navigate('/signin'); // Redirect to the sign-in page
+      navigate("/signin"); // Redirect to the sign-in page
     }, delay);
 
     return () => {
@@ -21,7 +21,9 @@ function EmailVerification() {
 
   return (
     <div className={`${styles.flexCenter} ${styles.marginY} ${styles.marginX}`}>
-      <div className={`border ${styles.paddingX} ${styles.paddingY} rounded-lg bg-black-gradient-2 box-shadow`}>
+      <div
+        className={`border ${styles.paddingX} ${styles.paddingY} rounded-lg bg-black-gradient-2 box-shadow`}
+      >
         <h2 className="text-secondary m-5">Email Verification</h2>
         <p className="text-white">
           Thank you for signing up!

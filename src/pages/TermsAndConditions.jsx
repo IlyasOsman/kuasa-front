@@ -9,42 +9,42 @@ const TermsAndConditions = () => {
     [data-custom-class='body'] * {
       background: transparent !important;
     }
-  
+
     [data-custom-class='title'],
     [data-custom-class='title'] * {
       font-family: Arial !important;
       font-size: 26px !important;
       color: #ffffff !important;
     }
-  
+
     [data-custom-class='subtitle'],
     [data-custom-class='subtitle'] * {
       font-family: Arial !important;
       color: #595959 !important;
       font-size: 14px !important;
     }
-  
+
     [data-custom-class='heading_1'],
     [data-custom-class='heading_1'] * {
       font-family: Arial !important;
       font-size: 19px !important;
       color: #ffffff !important;
     }
-  
+
     [data-custom-class='heading_2'],
     [data-custom-class='heading_2'] * {
       font-family: Arial !important;
       font-size: 17px !important;
       color: #ffffff !important;
     }
-  
+
     [data-custom-class='body_text'],
     [data-custom-class='body_text'] * {
       color: #595959 !important;
       font-size: 14px !important;
       font-family: Arial !important;
     }
-  
+
     [data-custom-class='link'],
     [data-custom-class='link'] * {
       color: #3030F1 !important;
@@ -71,7 +71,7 @@ const TermsAndConditions = () => {
       <div class="MsoNormal" data-custom-class="subtitle" style="line-height: 1.5;">
         <strong>Last updated</strong>
         <bdt class="question">
-          <strong>August 27, 2023</strong>
+          <strong>October 6, 2023</strong>
         </bdt>
       </div>
       <div class="MsoNormal" style="line-height: 1.1;">
@@ -177,14 +177,14 @@ const TermsAndConditions = () => {
         </span>
         </span>
         </span>
-        </span>undefined</span>undefined
-      </div>undefined
-    </div>undefined<div align="center" style="line-height: 1;">undefined<br>undefined</div>undefined<div align="center" style="text-align: left;">undefined<div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;">
+        </span></span>
+      </div>
+    </div><div align="center" style="line-height: 1;"><br></div><div align="center" style="text-align: left;"><div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;">
         <span style="font-size:11.0pt;line-height:115%;font-family:Arial;
       Calibri;color:#595959;mso-themecolor:text1;mso-themetint:166;">We operate <bdt class="block-component"></bdt>the website <bdt class="question">kuasa</bdt> (the <bdt class="block-component"></bdt>' <strong>Site</strong>' <bdt class="else-block"></bdt>) <bdt class="block-component"></bdt>
           <bdt class="block-component"></bdt>, as well as any other related products and services that refer or link to these legal terms (the <bdt class="block-component"></bdt>' <strong>Legal Terms</strong>' <bdt class="else-block"></bdt>) (collectively, the <bdt class="block-component"></bdt>' <strong>Services</strong>' <bdt class="else-block"></bdt>). <bdt class="block-component"></bdt>
-        </span>undefined
-      </div>undefined<div class="MsoNormal" style="line-height: 1;">
+        </span>
+      </div><div class="MsoNormal" style="line-height: 1;">
         <br>
       </div>
       <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;">
@@ -1633,9 +1633,9 @@ const TermsAndConditions = () => {
           <br>
         </div>
         <div class="MsoNormal" data-custom-class="body_text" style="line-height: 1.5;">
-          <span style="font-size: 11pt; line-height: 16.8667px; color: rgb(89, 89, 89);">The Services may contain (or you may be sent via the <bdt class="block-component"></bdt>Site <bdt 
-          class="block-component"></bdt>) links to other websites ( <bdt class="block-component"></bdt>'Third-Party Websites' <bdt class="else-block"></bdt>) as well as articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications, software, and other content or items belonging to or originating from third parties ( <bdt class="block-component"></bdt>'Third-Party Content' <bdt class="else-block"></bdt>). 
-          Such <span style="font-size: 14.6667px;">Third-Party</span> Websites and <span style="font-size: 14.6667px;">Third-Party</span> Content are not investigated, monitored, or checked for accuracy, appropriateness, or completeness by us, and we are not responsible for any Third-Party Websites accessed through the Services or any <span style="font-size: 14.6667px;">Third-Party</span> Content posted on, available through, or installed from the Services, including the content, accuracy, offensiveness, opinions, reliability, privacy practices, or other policies of or contained in the <span style="font-size: 14.6667px;">Third-Party</span> Websites or the <span style="font-size: 14.6667px;">Third-Party</span> Content. 
+          <span style="font-size: 11pt; line-height: 16.8667px; color: rgb(89, 89, 89);">The Services may contain (or you may be sent via the <bdt class="block-component"></bdt>Site <bdt
+          class="block-component"></bdt>) links to other websites ( <bdt class="block-component"></bdt>'Third-Party Websites' <bdt class="else-block"></bdt>) as well as articles, photographs, text, graphics, pictures, designs, music, sound, video, information, applications, software, and other content or items belonging to or originating from third parties ( <bdt class="block-component"></bdt>'Third-Party Content' <bdt class="else-block"></bdt>).
+          Such <span style="font-size: 14.6667px;">Third-Party</span> Websites and <span style="font-size: 14.6667px;">Third-Party</span> Content are not investigated, monitored, or checked for accuracy, appropriateness, or completeness by us, and we are not responsible for any Third-Party Websites accessed through the Services or any <span style="font-size: 14.6667px;">Third-Party</span> Content posted on, available through, or installed from the Services, including the content, accuracy, offensiveness, opinions, reliability, privacy practices, or other policies of or contained in the <span style="font-size: 14.6667px;">Third-Party</span> Websites or the <span style="font-size: 14.6667px;">Third-Party</span> Content.
           Inclusion of, linking to, or permitting the use or installation of any <span style="font-size: 14.6667px;">Third-Party</span> Websites or any <span style="font-size: 14.6667px;">Third-Party</span>Content does not imply approval or endorsement thereof by us. If you decide to leave the Services and access the <span style="font-size: 14.6667px;">Third-Party</span> Websites or to use or install any <span style="font-size: 14.6667px;">Third-Party</span> Content, you do so at your own risk, and you should be aware these Legal Terms no longer govern. You should review the applicable terms and policies, including privacy and data gathering practices, of any website to which you navigate from the Services or relating to any applications you use or install from the Services. Any purchases you make through <span style="font-size: 14.6667px;">Third-Party</span> Websites will be through other websites and from other companies, and we take no responsibility whatsoever in relation to such purchases which are exclusively between you and the applicable third party. You agree and acknowledge that we do not endorse the products or services offered on <span style="font-size: 14.6667px;">Third-Party</span> Websites and you shall hold us blameless from any harm caused by your purchase of such products or services. Additionally, you shall hold us blameless from any losses sustained by you or harm caused to you relating to or resulting in any way from any <span style="font-size: 14.6667px;">Third-Party</span> Content or any contact with <span style="font-size: 14.6667px;">Third-Party</span> Websites. </span>
         </div>
         <div class="MsoNormal" style="line-height: 1.5;">
@@ -2330,15 +2330,15 @@ const TermsAndConditions = () => {
       ul {
         list-style-type: square;
       }
-  
+
       ul>li>ul {
         list-style-type: circle;
       }
-  
+
       ul>li>ul>li>ul {
         list-style-type: square;
       }
-  
+
       ol li {
         font-family: Arial;
       }

@@ -62,10 +62,10 @@ const MemberTable = () => {
     });
   };
 
-      // Function to capitalize the first letter of a string
-      const capitalize = (str) => {
-        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-      };
+  // Function to capitalize the first letter of a string
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
 
   return (
     <div className="flex flex-col mt-6">

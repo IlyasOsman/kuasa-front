@@ -34,7 +34,7 @@ export function AuthProvider({children}) {
 
       if (response.ok) {
         const responseData = await response.json();
-        const { message, access } = responseData;
+        const {message, access} = responseData;
 
         if (message === "A verification email has been sent.") {
           // Redirect to /email-verification for non-verified users
@@ -49,7 +49,6 @@ export function AuthProvider({children}) {
           // Redirect to /home for verified users
           navigate("/home");
         }
-
       } else {
         // const errorData = await response.json();
         toast.error("Invalid username or password", {

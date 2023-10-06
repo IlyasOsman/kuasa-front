@@ -39,13 +39,13 @@ const MemberProfile = () => {
     return <Loader />;
   }
 
-    // Function to capitalize the first letter of a string
-    const capitalize = (str) => {
-      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-    };
+  // Function to capitalize the first letter of a string
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
 
-    const capitalizedFirstName = capitalize(member.first_name);
-    const capitalizedLastName = capitalize(member.last_name);
+  const capitalizedFirstName = capitalize(member.first_name);
+  const capitalizedLastName = capitalize(member.last_name);
 
   return (
     <section className={`${styles.flexCenter} ${styles.marginY} ${styles.marginX}`}>
