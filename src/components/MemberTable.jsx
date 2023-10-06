@@ -62,6 +62,11 @@ const MemberTable = () => {
     });
   };
 
+      // Function to capitalize the first letter of a string
+      const capitalize = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+      };
+
   return (
     <div className="flex flex-col mt-6">
       {/* Search input */}
@@ -100,16 +105,16 @@ const MemberTable = () => {
                 {paginatedData.map((row) => (
                   <tr
                     key={row.pk}
-                    className="border-b border-neutral-500 text-white cursor-pointer"
+                    className="border-b border-neutral-500 text-white cursor-pointer hover:bg-gray-900"
                   >
-                    <td className="whitespace-nowrap px-6 py-4">
+                    <td className="whitespace-nowrap px-6 py-4 hover:text-secondary">
                       <Link to={`/members/${row.pk}`} onClick={scrollToTop}>
-                        {row.first_name}
+                        {capitalize(row.first_name)}
                       </Link>
                     </td>
-                    <td className="whitespace-nowrap px-6 py-4">
+                    <td className="whitespace-nowrap px-6 py-4 hover:text-secondary">
                       <Link to={`/members/${row.pk}`} onClick={scrollToTop}>
-                        {row.last_name}
+                        {capitalize(row.last_name)}
                       </Link>
                     </td>
                     <td className="whitespace-nowrap px-6 py-4">

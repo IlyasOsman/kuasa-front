@@ -39,6 +39,14 @@ const MemberProfile = () => {
     return <Loader />;
   }
 
+    // Function to capitalize the first letter of a string
+    const capitalize = (str) => {
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    };
+
+    const capitalizedFirstName = capitalize(member.first_name);
+    const capitalizedLastName = capitalize(member.last_name);
+
   return (
     <section className={`${styles.flexCenter} ${styles.marginY} ${styles.marginX}`}>
       <div className={`${styles.boxWidth}`}>
@@ -63,7 +71,7 @@ const MemberProfile = () => {
                   )}
                 </div>
 
-                <h1 className="text-secondary font-bold text-xl leading-8 my-1">{`${member.first_name} ${member.last_name}`}</h1>
+                <h1 className="text-secondary font-bold text-xl leading-8 my-1 ">{`${capitalizedFirstName} ${capitalizedLastName}`}</h1>
                 <p className="text-sm text-secondary hover:text-dimWhite leading-6">{member.bio}</p>
                 <ul className="bg-black-gradient-2 text-white py-2 px-3 mt-3 rounded shadow-sm divide-y">
                   {member.leadership_role && (
@@ -127,11 +135,11 @@ const MemberProfile = () => {
                     {/* Populate the rest of the profile data using user properties */}
                     <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">First Name</div>
-                      <div className="px-4 py-2">{member.first_name}</div>
+                      <div className="px-4 py-2 ">{capitalizedFirstName}</div>
                     </div>
                     <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">Last Name</div>
-                      <div className="px-4 py-2">{member.last_name}</div>
+                      <div className="px-4 py-2 ">{capitalizedLastName}</div>
                     </div>
                     <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">Email</div>

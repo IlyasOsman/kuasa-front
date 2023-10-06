@@ -28,6 +28,14 @@ const Profile = () => {
     setIsChangePasswordMode(!isChangePasswordMode);
   };
 
+  // Function to capitalize the first letter of a string
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
+  const capitalizedFirstName = capitalize(user.first_name);
+  const capitalizedLastName = capitalize(user.last_name);
+
   return (
     <section className={`${styles.flexCenter} ${styles.marginY} ${styles.marginX}`}>
       <div className={`${styles.boxWidth}`}>
@@ -56,7 +64,7 @@ const Profile = () => {
                 </div>
               </div>
 
-              <h1 className="text-secondary font-bold text-xl leading-8 my-1">{`${user.first_name} ${user.last_name}`}</h1>
+              <h1 className="text-secondary font-bold text-xl leading-8 my-1">{`${capitalizedFirstName} ${capitalizedLastName}`}</h1>
               <p className="text-sm text-secondary hover:text-dimWhite leading-6">{user.bio}</p>
               <ul className="bg-black-gradient-2 text-white py-2 px-3 mt-3 rounded shadow-sm divide-y">
                 {user.leadership_role && (
@@ -151,11 +159,11 @@ const Profile = () => {
                   {/* Populate the rest of the profile data using user properties */}
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-2 font-semibold">First Name</div>
-                    <div className="px-4 py-2">{user.first_name}</div>
+                    <div className="px-4 py-2">{capitalizedFirstName}</div>
                   </div>
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-2 font-semibold">Last Name</div>
-                    <div className="px-4 py-2">{user.last_name}</div>
+                    <div className="px-4 py-2">{capitalizedLastName}</div>
                   </div>
                   <div className="grid grid-cols-2">
                     <div className="px-4 py-2 font-semibold">Email</div>
