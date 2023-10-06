@@ -13,7 +13,7 @@ const ProfileEditForm = ({user, onCancel, onSave}) => {
   const validationSchema = Yup.object({
     first_name: Yup.string(),
     last_name: Yup.string(),
-    email: Yup.string().email("Invalid email address").required("Email is required"),
+    // email: Yup.string().email("Invalid email address").required("Email is required"),
     alternative_email: Yup.string().nullable().email("Invalid email address"),
     registration_no: Yup.string().matches(
       /^J\d{1,3}[A-Za-z]?\/\d{4,5}\/(201[0-9]|202[0-9]|2030)$/,
@@ -30,7 +30,7 @@ const ProfileEditForm = ({user, onCancel, onSave}) => {
   const initialValues = {
     first_name: user.first_name || "",
     last_name: user.last_name || "",
-    email: user.email || "",
+    // email: user.email || "",
     alternative_email: user.alternative_email || null,
     registration_no: user.registration_no || "",
     phone_number: user.phone_number || "",
@@ -126,7 +126,7 @@ const ProfileEditForm = ({user, onCancel, onSave}) => {
         )}
       </div>
 
-      <div className="mb-4">
+      {/* <div className="mb-4">
         <label className="block mb-2 text-sm text-white">Email</label>
         <input
           type="email"
@@ -140,7 +140,7 @@ const ProfileEditForm = ({user, onCancel, onSave}) => {
         {formik.touched.email && formik.errors.email && (
           <div className="text-red-500 text-sm mt-1">{formik.errors.email}</div>
         )}
-      </div>
+      </div> */}
 
       <div className="mb-4">
         <label className="block mb-2 text-sm text-white">Alternative Email</label>
