@@ -14,7 +14,8 @@ import {About} from "./pages/About";
 import {Profile} from "./components";
 import MemberProfile from "./components/MemberProfile";
 import EmailVerification from "./components/EmailVerification";
-// import SuccessfullyVerified from "./components/SuccessfullyVerified";
+import ForgotPassword from "./components/ForgotPassword";
+import PasswordReset from "./components/PasswordReset";
 
 const Routers = () => {
   return (
@@ -33,7 +34,8 @@ const Routers = () => {
       <Route path="profile" element={<Profile />} />
       <Route path="/members/:pk" element={<MemberProfile />} />
       <Route path="/email-verification" element={<EmailVerification />} />
-      {/* <Route path="/verify-email" element={<SuccessfullyVerified />} /> */}
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/api/password-reset/:uidb64/:token" element={<PasswordReset />} />
     </Routes>
   );
 };

@@ -9,7 +9,7 @@ import {useAuth} from "../contexts/AuthContext";
 export function SignIn() {
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);
-  const {login} = useAuth(); // Use the login function from AuthContext
+  const {login} = useAuth();
 
   const handleToggle = () => {
     if (type === "password") {
@@ -126,12 +126,12 @@ export function SignIn() {
             {formik.touched.password && formik.errors.password ? (
               <small className="text-red-500 mt-2">{formik.errors.password}</small>
             ) : null}
-            <a
-              href="#"
+            <Link
+              to="/forgot-password"
               className="inline-block mt-4 text-blue-500 capitalize hover:underline dark:text-blue-400"
             >
               Forgot Password?
-            </a>
+            </Link>
           </div>
           <div className="mt-6">
             <Button
