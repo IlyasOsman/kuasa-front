@@ -176,7 +176,7 @@ const PasswordReset = () => {
           <div
             className={`border ${styles.paddingX} ${styles.paddingY} rounded-lg bg-black-gradient-2 box-shadow`}
           >
-            <p>Validating token...</p>
+            <p className="text-white">Validating token...</p>
           </div>
         </div>
       )}
