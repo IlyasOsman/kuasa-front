@@ -50,8 +50,6 @@ export function SignUp() {
         });
 
         if (response.ok) {
-          // Handle success, e.g., redirect to login page or show a success message.
-          // Redirect to the '/email-verification' page upon successful registration
           toast.success("Registration successful", {
             position: "top-center",
             autoClose: 3000,
@@ -64,16 +62,13 @@ export function SignUp() {
 
           setTimeout(() => {
             navigate("/email-verification");
-          }, 4000);
+          }, 3000);
         } else {
-          // Handle errors
           const errorData = await response.json();
           console.error("Error:", errorData);
-          // Set form errors
           formik.setErrors(errorData);
         }
       } catch (error) {
-        // An error occurred before the request was completed.
         console.error("Error:", error.message);
       }
     }

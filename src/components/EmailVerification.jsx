@@ -6,7 +6,7 @@ function EmailVerification() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const delay = 30000;
+    const delay = 100000;
 
     const redirectTimer = setTimeout(() => {
       navigate("/signin");
