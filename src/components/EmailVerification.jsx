@@ -6,16 +6,14 @@ function EmailVerification() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Delay for 10 seconds (10000 milliseconds)
-    const delay = 10000;
+    const delay = 30000;
 
-    // Set a timer to redirect to the sign-in page after 10 seconds
     const redirectTimer = setTimeout(() => {
-      navigate("/signin"); // Redirect to the sign-in page
+      navigate("/signin");
     }, delay);
 
     return () => {
-      clearTimeout(redirectTimer); // Clear the timer if the component unmounts
+      clearTimeout(redirectTimer);
     };
   }, [navigate]);
 

@@ -13,7 +13,7 @@ const ForgotPassword = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       navigate("/home");
-    }, 40000);
+    }, 100000);
 
     return () => {
       clearTimeout(timeoutId);
