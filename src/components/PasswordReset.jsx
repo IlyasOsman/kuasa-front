@@ -108,7 +108,7 @@ const PasswordReset = () => {
                     <div className="m-2">
                       <label
                         htmlFor="password"
-                        className="block text-sm font-bold ml-1 mb-2 dark:text-white"
+                        className="block text-sm font-bold ml-1 mb-2 text-white"
                       >
                         Password
                       </label>
@@ -128,7 +128,7 @@ const PasswordReset = () => {
                     <div className="m-2">
                       <label
                         htmlFor="confirmation"
-                        className="block text-sm font-bold ml-1 mb-2 dark:text-white"
+                        className="block text-sm font-bold ml-1 mb-2 text-white"
                       >
                         Confirm Password
                       </label>

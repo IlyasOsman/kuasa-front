@@ -17,7 +17,7 @@ const Profile = () => {
 
   if (!user) {
     // Handle the case where user is null or undefined
-    return <Loader />; // or return a loading indicator, error message, or redirect
+    return <Loader />;
   }
 
   const toggleEditMode = () => {
@@ -65,7 +65,7 @@ const Profile = () => {
               </div>
 
               <h1 className="text-secondary font-bold text-xl leading-8 my-1">{`${capitalizedFirstName} ${capitalizedLastName}`}</h1>
-              <p className="text-sm text-secondary hover:text-dimWhite leading-6">{user.bio}</p>
+              <p className="text-sm text-white hover:text-dimWhite leading-6">{user.bio}</p>
               <ul className="bg-black-gradient-2 text-white py-2 px-3 mt-3 rounded shadow-sm divide-y">
                 {user.leadership_role && (
                   <li className="flex items-center py-3">

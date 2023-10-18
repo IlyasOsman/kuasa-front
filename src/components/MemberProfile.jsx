@@ -15,7 +15,6 @@ const MemberProfile = () => {
   const [member, setMember] = useState(null);
 
   useEffect(() => {
-    // Replace with your actual API endpoint
     fetch(`${kuasaApi}/api/members/${pk}/`, {
       headers: {
         Authorization: `Bearer ${accessToken}`
@@ -72,7 +71,7 @@ const MemberProfile = () => {
                 </div>
 
                 <h1 className="text-secondary font-bold text-xl leading-8 my-1 ">{`${capitalizedFirstName} ${capitalizedLastName}`}</h1>
-                <p className="text-sm text-secondary hover:text-dimWhite leading-6">{member.bio}</p>
+                <p className="text-sm text-white hover:text-dimWhite leading-6">{member.bio}</p>
                 <ul className="bg-black-gradient-2 text-white py-2 px-3 mt-3 rounded shadow-sm divide-y">
                   {member.leadership_role && (
                     <li className="flex items-center py-3">
