@@ -76,10 +76,7 @@ const ForgotPassword = () => {
             <form onSubmit={formik.handleSubmit}>
               <div className="grid gap-y-4">
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-bold ml-1 mb-2 dark:text-white"
-                  >
+                  <label htmlFor="email" className="block text-sm font-bold ml-1 mb-2 text-white">
                     Email address
                   </label>
                   <div className="relative">
@@ -90,7 +87,7 @@ const ForgotPassword = () => {
                       value={formik.values.email}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className="block w-full py-3 px-10 focus:ring-opacity-40 border rounded-md bg-gray-900 text-gray-300 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
+                      className="block w-full py-3 px-10 focus:ring-opacity-40 border rounded-md bg-gray-900 text-gray-100 border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
                       placeholder="Email"
                     />
                   </div>
