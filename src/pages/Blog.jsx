@@ -2,14 +2,14 @@ import React, {useState, useEffect} from "react";
 import PhotoCard from "../components/PhotoCard";
 import styles from "../style";
 import {ComingSoon} from "./ComingSoon";
-import NotFoundpage from "./NotFoundpage"; // Import the NotFoundpage component
+import NotFoundpage from "./NotFoundpage";
 import Loader from "../components/Loader";
 
 const apiKey = import.meta.env.VITE_REACT_APP_NASA_API_KEY;
 
 export const Blog = () => {
   const [blogData, setBlogData] = useState([]);
-  const [activeTab, setActiveTab] = useState("photo"); // Initialize with "photo"
+  const [activeTab, setActiveTab] = useState("photo");
   const [apiError, setApiError] = useState(false); // Track API error state
   const [isLoading, setIsLoading] = useState(true);
 
@@ -37,7 +37,7 @@ export const Blog = () => {
   return (
     <section className="bg-primary">
       <div className="container px-6 py-5 mx-auto">
-        <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+        <h1 className="text-2xl font-semibold text-center capitalize lg:text-3xl text-white">
           Check out our latest Blog
         </h1>
 

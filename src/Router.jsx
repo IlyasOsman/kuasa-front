@@ -16,6 +16,8 @@ import MemberProfile from "./components/MemberProfile";
 import EmailVerification from "./components/EmailVerification";
 import ForgotPassword from "./components/ForgotPassword";
 import PasswordReset from "./components/PasswordReset";
+import {Events} from "./pages/Events";
+import {EventDetail} from "./components/EventDetail";
 
 const Routers = () => {
   return (
@@ -36,6 +38,8 @@ const Routers = () => {
       <Route path="/email-verification" element={<EmailVerification />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/api/password-reset/:uidb64/:token" element={<PasswordReset />} />
+      <Route path="/events" element={<Events />} />
+      <Route path="/event-detail/:slug" element={<EventDetail />} />
     </Routes>
   );
 };
