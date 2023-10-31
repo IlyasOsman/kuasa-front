@@ -12,16 +12,9 @@ import arrowUp from "./arrow-up.svg";
 import discount from "./Discount.svg";
 import facebook from "./facebook.svg";
 import linkedin from "./linkedin.svg";
+import linkedinIcon from "./linkedin.svg";
 import twitter from "./twitter.svg";
 import hero from "./hero.mp4";
-import alex from "./alex.png";
-import rachael from "./rachael.png";
-import brian from "./brian.png";
-import munene from "./munene.png";
-import mercy from "./mercy.png";
-import felix from "./felix.png";
-import mburu from "./mburu.png";
-import elizabeth from "./elizabeth.jpeg";
 import ebk from "./ebk.png";
 import leo from "./leoskyafrica.jpeg";
 import kflyinglab from "./kflyinglab.png";
@@ -36,7 +29,6 @@ import mail from "./mail.svg";
 import eye from "./eye.png";
 import eyeOff from "./eyeoff.png";
 import nobgrocket from "./nobgrocket.png";
-import mwongera from "./mwongera.png";
 import placeholderprofileimage from "./placeholderprofileimage.png";
 import whatsapp from "./whatsapp.svg";
 import github from "./github.svg";
@@ -57,16 +49,9 @@ export {
   discount,
   facebook,
   linkedin,
+  linkedinIcon,
   twitter,
   hero,
-  alex,
-  rachael,
-  brian,
-  munene,
-  mercy,
-  felix,
-  mburu,
-  elizabeth,
   ebk,
   iek,
   kairforce,
@@ -81,7 +66,6 @@ export {
   eye,
   eyeOff,
   nobgrocket,
-  mwongera,
   placeholderprofileimage,
   whatsapp,
   github,

@@ -1,13 +1,4 @@
 import {
-  alex,
-  rachael,
-  brian,
-  munene,
-  mercy,
-  felix,
-  elizabeth,
-  mburu,
-  mwongera,
   facebook,
   github,
   linkedin,
@@ -43,72 +34,6 @@ export const features = [
     icon: network,
     title: "Network",
     content: "Build connection that extend beyond the confines of your academic journey."
-  }
-];
-
-export const leaders = [
-  {
-    id: "1",
-    name: "Alex Katuso",
-    title: "President",
-    url: "https://www.linkedin.com/in/alex-katuso-b73b91184",
-    img: alex
-  },
-  {
-    id: "2",
-    name: "Dr. Victor Mwongera",
-    title: "Patron",
-    url: "https://www.linkedin.com/in/dr-eng-victor-mwongera-pe-phd-mraes-meng-hons-0400562a/",
-    img: mwongera
-  },
-  {
-    id: "3",
-    name: "Rachael Jelagat",
-    title: "Deputy President",
-    url: "https://www.linkedin.com/in/rachael-jelagat-82983b208",
-    img: rachael
-  },
-  {
-    id: "4",
-    name: "Brian Vuyiya",
-    title: "Project Coordinator",
-    url: "https://www.linkedin.com/in/brian-vuyiya-91b358243",
-    img: brian
-  },
-  {
-    id: "5",
-    name: "Mercy Kung’u",
-    title: "Publicity Secretary",
-    url: "https://www.linkedin.com/in/mercy-kung-u-252121235",
-    img: mercy
-  },
-  {
-    id: "6",
-    name: "Derric Munene",
-    title: "Secretary General",
-    url: "https://www.linkedin.com/in/derric-munene-6b2359226",
-    img: munene
-  },
-  {
-    id: "7",
-    name: "Felix Meitamei",
-    title: "Organizing Secretary",
-    url: "https://www.linkedin.com/in/felix-meitamei-99222a286",
-    img: felix
-  },
-  {
-    id: "8",
-    name: "Mburu Jessicah",
-    title: "Finance secretary",
-    url: "https://www.linkedin.com/in/mburu-jessicah-62036524a",
-    img: mburu
-  },
-  {
-    id: "9",
-    name: "Elizabeth Musau",
-    title: "Assistant Publicity Secretary",
-    url: "https://www.linkedin.com/in/elizabeth-musau-1b51a9215",
-    img: elizabeth
   }
 ];
 
@@ -263,6 +188,6 @@ export const faqsData = [
   {
     question: "How can I join?",
     answer:
-      "For now, go to the Google Form by clicking the 'Join Us' button and following the instructions provided. We will pay automatically through this website in future."
+      "To join, simply sign up using your Kenyatta University corporate email, complete the registration payment, and that's it! Your part is done; now, wait for approval."
   }
 ];
