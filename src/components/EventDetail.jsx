@@ -16,6 +16,7 @@ export const EventDetail = () => {
   const [event, setEvent] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [isEditingCoverImage, setIsEditingCoverImage] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -90,7 +91,6 @@ export const EventDetail = () => {
 
   const handleDeleteEvent = () => {
     if (window.confirm("Are you sure you want to delete this event?")) {
-      // Make a DELETE request to the API endpoint to delete the event
       fetch(`${kuasaApi}/api/events/delete/${slug}/`, {
         method: "DELETE",
         headers: {
@@ -98,7 +98,6 @@ export const EventDetail = () => {
         }
       }).then((response) => {
         if (response.status === 204) {
-          // Redirect to the event list or any other page after successful deletion
           navigate("/events");
         } else {
           console.error("Error deleting event");
@@ -122,7 +121,6 @@ export const EventDetail = () => {
   // Function to handle the save button in the editing modal
   const handleSaveEdit = () => {
     const formattedDate = formatEventDate(formData.event_date);
-    // const eventData = { ...formData, event_date: formattedDate };
 
     const formDataToSend = new FormData();
     formDataToSend.append("title", formData.title);
@@ -130,6 +128,8 @@ export const EventDetail = () => {
     formDataToSend.append("event_date", formattedDate);
     formDataToSend.append("location", formData.location);
     formDataToSend.append("host", formData.host);
+
+    setLoading(true);
 
     fetch(`${kuasaApi}/api/events/edit/${slug}/`, {
       method: "PATCH",
@@ -139,14 +139,16 @@ export const EventDetail = () => {
       body: formDataToSend
     }).then((response) => {
       if (response.status === 200) {
-        setIsEditing(false); // Close the editing modal
+        setIsEditing(false);
         // Refresh the event details to show the updated information
+        setLoading(false);
         fetch(`${kuasaApi}/api/events/${slug}/`)
           .then((response) => response.json())
           .then((data) => setEvent(data))
           .catch((error) => console.error("Error fetching updated event data: ", error));
       } else {
         console.error("Error updating event");
+        setLoading(false);
       }
     });
   };
@@ -173,7 +175,7 @@ export const EventDetail = () => {
 
     const formDataToSend = new FormData();
     formDataToSend.append("cover_image", formData.cover_image);
-
+    setLoading(true);
     fetch(`${kuasaApi}/api/events/edit/${slug}/`, {
       method: "PATCH",
       headers: {
@@ -182,14 +184,18 @@ export const EventDetail = () => {
       body: formDataToSend
     }).then((response) => {
       if (response.status === 200) {
+        setIsEditingCoverImage(false);
+        setLoading(false);
         alert("Cover photo updated successfully.");
-        // Optionally, you can refresh the event details to reflect the new cover image.
         fetch(`${kuasaApi}/api/events/${slug}/`)
           .then((response) => response.json())
           .then((data) => setEvent(data))
           .catch((error) => console.error("Error fetching updated event data: ", error));
       } else {
         console.error("Error updating cover photo");
+        alert("Error updating cover photo");
+        setIsEditingCoverImage(false);
+        setLoading(false);
       }
     });
   };
@@ -209,42 +215,56 @@ export const EventDetail = () => {
             className="my-4 cursor-pointer"
             onClick={() => setIsEditingCoverImage(true)}
           />{" "}
-          {/* Center the image */}
-          <p className="text-white">Date this will take place : {formattedDate}</p>
-          <p className="text-white">This event will happen at: {event.location}</p>
-          <p className={`${styles.paragraph} text-left`}>{event.description}</p>{" "}
-          {/* Add text-left class for left alignment */}
-          <p className="text-white text-left mt-4">Host : {event.host}</p>
+          <p className="text-white text-left">
+            <strong>Date :</strong> {formattedDate}
+          </p>
+          <p className="text-white text-left">
+            <strong>Location : </strong> {event.location}
+          </p>
+          <p className={`${styles.paragraph} text-left`}>
+            <strong className="text-white">Description</strong>
+            <br />
+            {event.description}
+          </p>
+          <p className="text-white text-left mt-4">
+            <strong>Hosted together with : </strong> <span className="italic">{event.host}</span>
+          </p>
         </div>
         {user && user.is_staff && (
-          <div className="flex justify-end items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              className="mx-2 cursor-pointer"
-              onClick={handleEditEvent}
-              width="24"
-              height="24"
-            >
-              <path
-                d="M5 18.89H6.41421L15.7279 9.57629L14.3137 8.16207L5 17.4758V18.89ZM21 20.89H3V16.6474L16.435 3.21233C16.8256 2.8218 17.4587 2.8218 17.8492 3.21233L20.6777 6.04075C21.0682 6.43128 21.0682 7.06444 20.6777 7.45497L9.24264 18.89H21V20.89ZM15.7279 6.74786L17.1421 8.16207L18.5563 6.74786L17.1421 5.33365L15.7279 6.74786Z"
-                fill="rgba(51,187,207,1)"
-              ></path>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              className="mx-2 cursor-pointer"
-              onClick={handleDeleteEvent}
-              width="24"
-              height="24"
-            >
-              <path
-                d="M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z"
-                fill="rgba(51,187,207,1)"
-              ></path>
-            </svg>
-          </div>
+          <>
+            {loading ? (
+              <Loader />
+            ) : (
+              <div className="flex justify-end items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="mx-2 cursor-pointer"
+                  onClick={handleEditEvent}
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M5 18.89H6.41421L15.7279 9.57629L14.3137 8.16207L5 17.4758V18.89ZM21 20.89H3V16.6474L16.435 3.21233C16.8256 2.8218 17.4587 2.8218 17.8492 3.21233L20.6777 6.04075C21.0682 6.43128 21.0682 7.06444 20.6777 7.45497L9.24264 18.89H21V20.89ZM15.7279 6.74786L17.1421 8.16207L18.5563 6.74786L17.1421 5.33365L15.7279 6.74786Z"
+                    fill="rgba(51,187,207,1)"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="mx-2 cursor-pointer"
+                  onClick={handleDeleteEvent}
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M7 4V2H17V4H22V6H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V6H2V4H7ZM6 6V20H18V6H6ZM9 9H11V17H9V9ZM13 9H15V17H13V9Z"
+                    fill="rgba(51,187,207,1)"
+                  ></path>
+                </svg>
+              </div>
+            )}
+          </>
         )}
       </div>
       {isEditing && (
@@ -293,20 +313,25 @@ export const EventDetail = () => {
                 placeholder="Host"
                 className="w-full px-5 py-3 mt-2 border rounded-md bg-gray-900 text-white border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
               />
-              <div className="flex justify-end mt-2">
-                <button
-                  onClick={handleSaveEdit}
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg"
-                >
-                  Add
-                </button>
-                <button
-                  onClick={handleCancelEdit}
-                  className="bg-gray-500 text-white px-4 py-2 rounded-lg mx-2"
-                >
-                  Cancel
-                </button>
-              </div>
+              {loading ? (
+                <Loader />
+              ) : (
+                <div className="flex justify-end mt-2">
+                  <button
+                    onClick={handleSaveEdit}
+                    disabled={loading}
+                    className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+                  >
+                    Add
+                  </button>
+                  <button
+                    onClick={handleCancelEdit}
+                    className="bg-gray-500 text-white px-4 py-2 rounded-lg mx-2"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -324,20 +349,25 @@ export const EventDetail = () => {
                   onChange={handleCoverImageChange}
                   className="w-full mb-4 p-2 border border-gray-300 rounded-md text-white"
                 />
-                <div className="flex justify-end">
-                  <button
-                    onClick={updateCoverImage}
-                    className="bg-blue-500 text-white px-4 py-2 rounded-lg"
-                  >
-                    Update
-                  </button>
-                  <button
-                    onClick={() => setIsEditingCoverImage(false)}
-                    className="bg-gray-500 text-white px-4 py-2 rounded-lg mx-2"
-                  >
-                    Cancel
-                  </button>
-                </div>
+                {loading ? (
+                  <Loader />
+                ) : (
+                  <div className="flex justify-end">
+                    <button
+                      onClick={updateCoverImage}
+                      disabled={loading}
+                      className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+                    >
+                      Update
+                    </button>
+                    <button
+                      onClick={() => setIsEditingCoverImage(false)}
+                      className="bg-gray-500 text-white px-4 py-2 rounded-lg mx-2"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>

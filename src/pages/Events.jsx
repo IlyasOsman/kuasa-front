@@ -4,12 +4,14 @@ import {EventCard} from "../components/EventCard";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {useAuth} from "../contexts/AuthContext";
+import Loader from "../components/Loader";
 
 export const Events = () => {
   const {accessToken, user} = useAuth();
   const [events, setEvents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const eventsPerPage = 6;
 
   const kuasaApi = import.meta.env.VITE_REACT_APP_KUASA_API;
@@ -30,6 +32,17 @@ export const Events = () => {
       .then((data) => setEvents(data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
+
+  if (!events) {
+    return <Loader />;
+  }
+
+  const fetchEvents = () => {
+    fetch(`${kuasaApi}/api/events/`)
+      .then((response) => response.json())
+      .then((data) => setEvents(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  };
 
   const indexOfLastEvent = currentPage * eventsPerPage;
   const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
@@ -83,7 +96,6 @@ export const Events = () => {
     }
 
     const formattedDate = formatEventDate(formData.event_date);
-    // const eventData = { ...formData, event_date: formattedDate };
 
     const formDataToSend = new FormData();
     formDataToSend.append("title", formData.title);
@@ -93,8 +105,7 @@ export const Events = () => {
     formDataToSend.append("host", formData.host);
     formDataToSend.append("cover_image", formData.cover_image);
 
-    console.log(formattedDate);
-    console.log(formDataToSend);
+    setLoading(true);
 
     fetch(`${kuasaApi}/api/events/`, {
       method: "POST",
@@ -106,14 +117,17 @@ export const Events = () => {
       .then((response) => {
         if (response.ok) {
           setShowModal(false);
-          // refresh the events by re-fetching them.
-          // Implement a function to fetch events and update the state.
+          fetchEvents();
+          setLoading(false);
         } else {
           // Handle the error case here.
+          setLoading(false);
         }
       })
       .catch((error) => {
         console.log(error);
+        alert(error);
+        setLoading(false);
       });
   };
 
@@ -226,20 +240,25 @@ export const Events = () => {
                 onChange={handleCoverImageChange}
                 className="w-full px-5 py-3 mt-2 border rounded-md bg-gray-900 text-white border-gray-600 focus:border-blue-300 focus:outline-none focus:ring"
               />
-              <div className="flex justify-end mt-2">
-                <button
-                  onClick={handleAddEvent}
-                  className="bg-blue-500 text-white px-4 py-2 rounded-lg"
-                >
-                  Add
-                </button>
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="bg-gray-500 text-white px-4 py-2 rounded-lg mx-2"
-                >
-                  Cancel
-                </button>
-              </div>
+              {loading ? (
+                <Loader />
+              ) : (
+                <div className="flex justify-end mt-2">
+                  <button
+                    onClick={handleAddEvent}
+                    disabled={loading}
+                    className="bg-blue-500 text-white px-4 py-2 rounded-lg"
+                  >
+                    Add
+                  </button>
+                  <button
+                    onClick={() => setShowModal(false)}
+                    className="bg-gray-500 text-white px-4 py-2 rounded-lg mx-2"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
