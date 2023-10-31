@@ -5,6 +5,7 @@ import styles from "../style";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {useAuth} from "../contexts/AuthContext";
+import DOMPurify from "dompurify";
 
 export const EventDetail = () => {
   const {slug} = useParams();
@@ -200,6 +201,11 @@ export const EventDetail = () => {
     });
   };
 
+  function sanitizeAndRenderDescription(description) {
+    const sanitizedDescription = DOMPurify.sanitize(description);
+    return {__html: sanitizedDescription};
+  }
+
   return (
     <div className={`bg-primary ${styles.flexCenter} ${styles.paddingX} ${styles.paddingY}`}>
       {" "}
@@ -221,11 +227,13 @@ export const EventDetail = () => {
           <p className="text-white text-left">
             <strong>Location : </strong> {event.location}
           </p>
-          <p className={`${styles.paragraph} text-left`}>
-            <strong className="text-white">Description</strong>
-            <br />
-            {event.description}
-          </p>
+          <p
+            className={`${styles.paragraph} text-left`}
+            style={{whiteSpace: "pre-wrap"}}
+            dangerouslySetInnerHTML={sanitizeAndRenderDescription(
+              `<strong class="text-white">Description</strong><br />${event.description}`
+            )}
+          />
           <p className="text-white text-left mt-4">
             <strong>Hosted together with : </strong> <span className="italic">{event.host}</span>
           </p>
