@@ -3,6 +3,12 @@ import PropTypes from "prop-types";
 import {leadershipIcon, linkedinIcon, placeholderprofileimage} from "../assets";
 
 function LeadershipCard({first_name, last_name, leadership_role, profile_image, linkedin}) {
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
+  const capitalizedFirstName = capitalize(first_name);
+  const capitalizedLastName = capitalize(last_name);
   return (
     <div className="flex justify-between flex-col px-10 py-12 rounded-[20px] max-w-[370px] md:mr-10 sm:mr-5 mr-0 my-5 feedback-card border-[1px]">
       <div className="flex items-center">
@@ -39,7 +45,7 @@ function LeadershipCard({first_name, last_name, leadership_role, profile_image, 
         )}
         <div className="flex flex-col ml-4">
           <h4 className="font-poppins font-semibold text-[20px] leading-[32px] text-white">
-            {first_name} {last_name}
+            {capitalizedFirstName} {capitalizedLastName}
           </h4>
           <p className="font-poppins font-normal text-[16px] leading-[24px] text-dimWhite">
             {leadership_role}
