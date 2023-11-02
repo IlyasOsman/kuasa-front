@@ -247,7 +247,7 @@ export const EventDetail = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  className="mx-2 cursor-pointer"
+                  className="mx-10 cursor-pointer"
                   onClick={handleEditEvent}
                   width="24"
                   height="24"
@@ -260,7 +260,7 @@ export const EventDetail = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  className="mx-2 cursor-pointer"
+                  className="mx-4 cursor-pointer"
                   onClick={handleDeleteEvent}
                   width="24"
                   height="24"

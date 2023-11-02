@@ -29,17 +29,21 @@ export const EventCard = ({title, eventDate, location, host, coverImage, slug}) 
   return (
     <div className="rounded-lg border shadow-md bg-gray-900 border-gray-700 hover:border-secondary">
       <Link to={`/event-detail/${slug}`}>
-        <div className="aspect-w-16 aspect-h-9 p-3">
-          <img className="rounded-lg" src={coverImage} alt="eventimage" />
+        <div className="rounded-lg h-48 w-full overflow-hidden">
+          <img
+            className="h-full w-full object-cover"
+            src={coverImage}
+            alt="eventimage"
+            loading="lazy"
+          />
         </div>
       </Link>
       <div className="p-3">
         <div className="text-xs font-bold uppercase text-teal-700 mt-1 mb-2">KUASA</div>
         <Link to={`/event-detail/${slug}`}>
           {/* Topic / Title */}
-          <h5 className="mb-2 text-xl font-bold tracking-tight text-white">{title}</h5>
+          <h5 className="mb-2 text-l font-bold tracking-tight text-white">{title}</h5>
         </Link>
-
         <p className="flex items-start -mx-2 mb-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +65,7 @@ export const EventCard = ({title, eventDate, location, host, coverImage, slug}) 
             />
           </svg>
 
-          <span className="mx-2 text-white truncate w-72">{location}</span>
+          <span className="mx-2 text-white text-sm truncate w-72">{location}</span>
         </p>
 
         <p className="flex items-start -mx-2 mb-3">
@@ -76,10 +80,7 @@ export const EventCard = ({title, eventDate, location, host, coverImage, slug}) 
             ></path>
           </svg>
 
-          <span className="mx-2 text-white truncate w-75">
-            {/* Wednesday, September 09, 2023 &bull; 04:00 PM */}
-            {formattedDate}
-          </span>
+          <span className="mx-2 text-white truncate w-75 text-sm">{formattedDate}</span>
         </p>
 
         <p className="flex items-start -mx-2 mb-3">
@@ -94,14 +95,14 @@ export const EventCard = ({title, eventDate, location, host, coverImage, slug}) 
             ></path>
           </svg>
 
-          <span className="mx-2 text-white truncate w-72 mb-2">
+          <span className="mx-2 text-white truncate w-72 mb-2 text-sm">
             By <span className="font-bold">{host}</span>
           </span>
         </p>
 
         <Link
           to={`/event-detail/${slug}`}
-          className="inline-flex items-center py-2 px-4 font-poppins font-medium text-primary bg-blue-gradient rounded-[10px] outline-none capitalize transition-colors duration-300 transform hover:bg-green-400 active:bg-green-500 focus:outline-none focus:ring focus:ring-green-200 focus:ring-opacity-50"
+          className="inline-flex items-center py-2 px-4 text-sm font-poppins font-medium text-primary bg-blue-gradient rounded-[10px] outline-none capitalize transition-colors duration-300 transform hover:bg-green-400 active:bg-green-500 focus:outline-none focus:ring focus:ring-green-200 focus:ring-opacity-50"
         >
           View Details
           <svg

@@ -12,6 +12,7 @@ export const Events = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [pageLoading, setPageLoading] = useState(false);
   const eventsPerPage = 6;
 
   const kuasaApi = import.meta.env.VITE_REACT_APP_KUASA_API;
@@ -26,14 +27,21 @@ export const Events = () => {
   });
 
   useEffect(() => {
+    setPageLoading(true);
     // Fetch data from the API
     fetch(`${kuasaApi}/api/events/`)
       .then((response) => response.json())
-      .then((data) => setEvents(data))
-      .catch((error) => console.error("Error fetching data:", error));
+      .then((data) => {
+        setPageLoading(false);
+        setEvents(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setPageLoading(false);
+      });
   }, []);
 
-  if (!events) {
+  if (pageLoading) {
     return <Loader />;
   }
 
