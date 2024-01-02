@@ -33,6 +33,17 @@ import placeholderprofileimage from "./placeholderprofileimage.png";
 import whatsapp from "./whatsapp.svg";
 import github from "./github.svg";
 import demoimage from "./demoimage.png";
+import arrowRight from "./arrow-right.svg";
+import upvoteIcon from "./upvote.svg";
+import downvoteIcon from "./downvote.svg";
+import commentIcon from "./comment.svg";
+import shareIcon from "./share.svg";
+import activeupvoteIcon from "./activeupvote.svg";
+import editIcon from "./edit.svg";
+import deleteIcon from "./delete.svg";
+import downvotedIcon from "./downvoted.svg";
+import plusIcon from "./plusIcon.svg";
+import filterIcon from "./filter.svg";
 
 export {
   randomimage1,
@@ -46,6 +57,7 @@ export {
   menu,
   close,
   arrowUp,
+  arrowRight,
   discount,
   facebook,
   linkedin,
@@ -69,5 +81,15 @@ export {
   placeholderprofileimage,
   whatsapp,
   github,
-  demoimage
+  demoimage,
+  upvoteIcon,
+  downvoteIcon,
+  commentIcon,
+  shareIcon,
+  activeupvoteIcon,
+  editIcon,
+  deleteIcon,
+  downvotedIcon,
+  plusIcon,
+  filterIcon
 };

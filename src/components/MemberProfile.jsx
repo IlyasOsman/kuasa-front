@@ -5,7 +5,6 @@ import MemberTable from "./MemberTable";
 import {useAuth} from "../contexts/AuthContext";
 import {useParams} from "react-router-dom";
 import Loader from "./Loader";
-import NoPostYet from "./NoPostYet";
 
 const kuasaApi = import.meta.env.VITE_REACT_APP_KUASA_API;
 
@@ -166,10 +165,6 @@ const MemberProfile = () => {
                       </div>
                     </div>
                     <div className="grid grid-cols-2">
-                      <div className="px-4 py-2 font-semibold">Projects & Blogs</div>
-                      <div className="px-4 py-2">0</div>
-                    </div>
-                    <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">Alternative Email</div>
                       <div className="px-4 py-2">
                         <a
@@ -191,37 +186,6 @@ const MemberProfile = () => {
               </div>
             )}
             {/* End of About Section */}
-
-            {/* Blogs and Projects Section */}
-            {member && (
-              <div className="mt-4 bg-grey-900 p-3 shadow-sm rounded-md flex flex-col">
-                <div className="flex items-center space-x-2 font-semibold text-white leading-8 mb-3">
-                  <span className="text-secondary">
-                    <svg
-                      className="h-5"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      />
-                    </svg>
-                  </span>
-                  <span className="tracking-wide">Blogs and Projects</span>
-                </div>
-                <div className="mt-2 space-y-4 flex-grow">
-                  {/* Sample Blog/Project */}
-                  <NoPostYet />
-                  {/* Add more Blog/Project components here */}
-                </div>
-              </div>
-            )}
-            {/* End of Blogs and Projects Section */}
 
             {/* Other Members Section */}
             <div className="bg-grey-900 p-3 hover:shadow mt-4 rounded-md">

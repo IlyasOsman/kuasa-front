@@ -11,8 +11,8 @@ export default function PhotoCard({url, title, explanation, date, hdurl}) {
         className="block rounded-md shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-black-gradient-2 hover:bg-primary border border-gray-300  hover:border-cyan-500"
         onClick={() => setShowModal(true)}
       >
-        <div className="relative overflow-hidden bg-cover bg-no-repeat">
-          <img className="rounded-t-md h-48 w-full" src={url} alt="image" loading="lazy" />
+        <div className="relative overflow-hidden bg-cover bg-no-repeat h-48 w-full">
+          <img className="rounded-t-md h-full w-full" src={url} alt="image" loading="lazy" />
         </div>
 
         <div className="p-6">
@@ -56,11 +56,11 @@ export default function PhotoCard({url, title, explanation, date, hdurl}) {
                 {/*body*/}
                 <div className="relative p-6 flex-auto  max-h-[70vh] overflow-y-auto">
                   <div className="relative overflow-hidden bg-cover bg-no-repeat">
-                    <img src={hdurl} alt="image" loading="lazy" />
+                    <img src={hdurl} alt="image" loading="lazy" className="w-full h-auto" />
                   </div>
-                  <h2 className="text-secondary">Explanation</h2>
+                  <h2 className="text-secondary mt-4">Explanation</h2>
                   <p className="my-4 mt-4 text-slate-500 leading-relaxed">{explanation}</p>
-                  <h2 className="text-secondary">Date Taken</h2>
+                  <h2 className="text-secondary">Date of the photo</h2>
                   <p className="my-4 text-slate-500 leading-relaxed">{date}</p>
                 </div>
                 {/*footer*/}

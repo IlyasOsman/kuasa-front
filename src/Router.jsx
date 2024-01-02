@@ -2,7 +2,6 @@ import React from "react";
 import {Routes, Route, Navigate} from "react-router-dom";
 
 import Landingpage from "./pages/Landingpage";
-import {Projects} from "./pages/Projects";
 import {Blog} from "./pages/Blog";
 import {Contact} from "./components/Contact";
 import {SignUp} from "./components/SignUp";
@@ -18,14 +17,15 @@ import ForgotPassword from "./components/ForgotPassword";
 import PasswordReset from "./components/PasswordReset";
 import {Events} from "./pages/Events";
 import {EventDetail} from "./components/EventDetail";
+import {BlogDetail} from "./components/BlogDetail";
 
 const Routers = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Landingpage />} />
-      <Route path="/projects" element={<Projects />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/blog-detail/:slug" element={<BlogDetail />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="signin" element={<SignIn />} />
       <Route path="signup" element={<SignUp />} />

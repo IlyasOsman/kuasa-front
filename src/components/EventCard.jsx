@@ -100,7 +100,7 @@ export const EventCard = ({title, eventDate, location, host, coverImage, slug}) 
           </span>
         </p>
 
-        <Link
+        {/* <Link
           to={`/event-detail/${slug}`}
           className="inline-flex items-center py-2 px-4 text-sm font-poppins font-medium text-primary bg-blue-gradient rounded-[10px] outline-none capitalize transition-colors duration-300 transform hover:bg-green-400 active:bg-green-500 focus:outline-none focus:ring focus:ring-green-200 focus:ring-opacity-50"
         >
@@ -117,7 +117,7 @@ export const EventCard = ({title, eventDate, location, host, coverImage, slug}) 
               clipRule="evenodd"
             ></path>
           </svg>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

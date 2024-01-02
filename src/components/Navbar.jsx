@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {close, logo, menu} from "../assets";
 import {Link, NavLink} from "react-router-dom";
 import Button from "./Button";
-import {useAuth} from "../contexts/AuthContext"; // Import useAuth from your AuthContext
+import {useAuth} from "../contexts/AuthContext";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
@@ -27,16 +27,12 @@ const Navbar = () => {
       path: "/home"
     },
     {
-      title: "Projects",
-      path: "/projects"
+      title: "Blog",
+      path: "/blog"
     },
     {
       title: "Events",
       path: "/events"
-    },
-    {
-      title: "Blog",
-      path: "/blog"
     },
     {
       title: "Contact",

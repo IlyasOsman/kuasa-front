@@ -156,7 +156,7 @@ export const EventDetail = () => {
 
   // Function to handle the cancel button in the editing modal
   const handleCancelEdit = () => {
-    setIsEditing(false); // Close the editing modal without saving
+    setIsEditing(false);
   };
 
   const handleCoverImageChange = (event) => {
@@ -218,21 +218,20 @@ export const EventDetail = () => {
           <img
             src={event.cover_image}
             alt="Event Cover"
-            className="my-4 cursor-pointer"
+            className="my-4 cursor-pointer rounded-lg"
             onClick={() => setIsEditingCoverImage(true)}
+            style={{width: "800px", height: "auto"}}
           />{" "}
           <p className="text-white text-left">
-            <strong>Date :</strong> {formattedDate}
+            <strong>On </strong> {formattedDate}
           </p>
           <p className="text-white text-left">
-            <strong>Location : </strong> {event.location}
+            <strong>At </strong> {event.location}
           </p>
           <p
             className={`${styles.paragraph} text-left`}
             style={{whiteSpace: "pre-wrap"}}
-            dangerouslySetInnerHTML={sanitizeAndRenderDescription(
-              `<strong class="text-white">Description</strong><br />${event.description}`
-            )}
+            dangerouslySetInnerHTML={sanitizeAndRenderDescription(`<br />${event.description}`)}
           />
           <p className="text-white text-left mt-4">
             <strong>Hosted together with : </strong> <span className="italic">{event.host}</span>
