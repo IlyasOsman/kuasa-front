@@ -399,7 +399,7 @@ export const BlogDetail = () => {
   };
 
   const copyBlogLink = (slug) => {
-    const baseURL = "http://localhost:5173/blog-detail/";
+    const baseURL = "https://kuasa.live/blog-detail/";
     const blogURL = baseURL + slug;
 
     navigator.clipboard
