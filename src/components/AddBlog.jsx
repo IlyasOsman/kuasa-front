@@ -19,7 +19,8 @@ const AddBlog = ({setShowModal, kuasaBlogData, setKuasaBlogData}) => {
       link: "",
       cover_image: null,
       is_project: false,
-      author: user.pk
+      author: user.pk,
+      views: 0
     },
     validationSchema: Yup.object({
       title: Yup.string().required("Title is required").max(200),
@@ -36,6 +37,7 @@ const AddBlog = ({setShowModal, kuasaBlogData, setKuasaBlogData}) => {
       formDataWithImage.append("is_project", values.is_project);
       formDataWithImage.append("cover_image", values.cover_image);
       formDataWithImage.append("author", values.author);
+      formDataWithImage.append("views", values.views);
 
       fetch(`${kuasaApi}/api/blogs/`, {
         method: "POST",

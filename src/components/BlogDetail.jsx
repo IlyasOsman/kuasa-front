@@ -102,6 +102,22 @@ export const BlogDetail = () => {
       }
     };
 
+    const incrementView = async () => {
+      try {
+        const response = await fetch(`${kuasaApi}/api/blogs/${slug}/views/`);
+        const viewsData = await response.json();
+        console.log(viewsData);
+        if (response.ok) {
+          console.log("Views count incremented");
+        } else {
+          throw new Error("Failed to increment view count");
+        }
+      } catch (error) {
+        console.error("Error incrementing view count:", error);
+      }
+    };
+
+    incrementView();
     fetchBlogAndUpvoteStatus();
   }, [slug, user]);
 
@@ -495,6 +511,7 @@ export const BlogDetail = () => {
             {/* Comment Section */}
             <p>{blog.upvotes.length} Upvotes</p>
             <p className="mx-2">{blog.comments.length} comments</p>
+            <p className="mx-2">{blog.views} views</p>
           </div>
 
           <div className="mt-4 border border-gray-700 rounded-lg p-3">
