@@ -30,13 +30,17 @@ const Navbar = () => {
       title: "Blog",
       path: "/blog"
     },
-    {
-      title: "Events",
-      path: "/events"
-    },
+    // {
+    //   title: "Events",
+    //   path: "/events"
+    // },
     {
       title: "Contact",
       path: "/contact"
+    },
+    {
+      title: "POTD",
+      path: "/potd"
     }
   ];
 

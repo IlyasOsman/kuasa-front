@@ -18,6 +18,7 @@ import PasswordReset from "./components/PasswordReset";
 import {Events} from "./pages/Events";
 import {EventDetail} from "./components/EventDetail";
 import {BlogDetail} from "./components/BlogDetail";
+import {POTD} from "./components/POTD";
 
 const Routers = () => {
   return (
@@ -25,7 +26,7 @@ const Routers = () => {
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Landingpage />} />
       <Route path="/blog" element={<Blog />} />
-      <Route path="/blog-detail/:slug" element={<BlogDetail />} />
+      <Route path="/blog-detail/:issue" element={<BlogDetail />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="signin" element={<SignIn />} />
       <Route path="signup" element={<SignUp />} />
@@ -40,6 +41,7 @@ const Routers = () => {
       <Route path="/api/password-reset/:uidb64/:token" element={<PasswordReset />} />
       <Route path="/events" element={<Events />} />
       <Route path="/event-detail/:slug" element={<EventDetail />} />
+      <Route path="/potd" element={<POTD />} />
     </Routes>
   );
 };
