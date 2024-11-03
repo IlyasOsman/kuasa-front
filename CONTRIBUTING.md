@@ -20,74 +20,88 @@ To contribute effectively to the KUASA website project, you should meet the foll
 
 ## Getting Started
 
-1. **Fork the Repository**:
+1.  **Fork the Repository**:
 
-   - Click the "Fork" button at the top right of the [KUASA GitHub repository](https://github.com/kuasakenya/kuasa-front).
+    - Click the "Fork" button at the top right of the [KUASA GitHub repository](https://github.com/kuasakenya/kuasa-front).
 
-2. **Clone Your Fork**:
+2.  **Clone Your Fork**:
 
-   - Clone the forked repository to your local machine using the following command:
-     ```
-     git clone https://github.com/your-username/kuasa-front.git
-     ```
+    - Clone the forked repository to your local machine using the following command:
+      ```
+      git clone https://github.com/your-username/kuasa-front.git
+      ```
 
-3. **Create and Configure .env File**:
+3.  **"Moving to the Project Directory**:
 
-   - Create a `.env` file in the project root directory:
+    - Navigate to the project directory:
+      ```
+      cd kuasa-front
+      ```
 
-     ```
-     touch .env
-     ```
+4.  **Create and Configure .env File**:
 
-   - Edit the `.env` file and add the following line with the appropriate API URL:
+    - Create a `.env` file in the project root directory:
 
-     ```
-     VITE_REACT_APP_KUASA_API=https://127.0.0.1:8000
-     ```
+      ```
+      touch .env
+      ```
 
-4. **Install Dependencies**:
+    - Edit the `.env` file and add the following line with the appropriate API URL:
 
-   - Navigate to the project directory and install the required dependencies:
-     ```
-     cd kuasa-front
-     npm install
-     ```
+      ```
+      VITE_REACT_APP_KUASA_API=https://127.0.0.1:8000
+      ```
 
-5. **Run the Project**:
+5.  **Install Dependencies**:
 
-   - Start the development server to run the project:
-     ```
-     npm run dev
-     ```
-     The website should now be accessible in your web browser.
+    - Navigate to the project directory and install the required dependencies:
+      ```
+      cd kuasa-front
+      npm install
+      ```
 
-6. **Create a Branch**:
+6.  **Run the Project**:
 
-   - Create a new branch for your contribution:
-     ```
-     git checkout -b feature/your-feature-name
-     ```
+    - Start the development server to run the project:
+      ```
+      npm run dev
+      ```
 
-7. **Make Changes**:
+7.  **Check that you're on the main branch and that it's up-to-date**:
 
-   - Make your desired changes or additions to the codebase.
+         ```
 
-8. **Linting and Formatting**:
+    git checkout main
+    git pull origin main
+    ```
 
-   - Before committing your changes, make sure to fix linting errors and format the code:
-     ```
-     eslint .
-     npx prettier --write .
-     ```
+8.  **Create a Branch**:
 
-9. **Commit Your Changes**:
+    - Create a new branch for your contribution:
+      ```
+      git checkout -b feature/your-feature-name
+      ```
 
-   - Commit your changes with a clear and descriptive commit message:
-     ```
-     git commit -m "Add feature: your feature description"
-     ```
+9.  **Make Changes**:
 
-10. **Push to Your Fork**:
+    - Make your desired changes or additions to the codebase.
+
+10. **Linting and Formatting**:
+
+    - Before committing your changes, make sure to fix linting errors and format the code:
+      ```
+      eslint .
+      npx prettier --write .
+      ```
+
+11. **Commit Your Changes**:
+
+    - Commit your changes with a clear and descriptive commit message:
+      ```
+      git commit -m "Add feature: your feature description"
+      ```
+
+12. **Push to Your Fork**:
 
 - Push your changes to your GitHub fork:
   ```
